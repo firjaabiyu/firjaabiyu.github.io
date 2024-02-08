@@ -109,6 +109,39 @@
                 </div>
             </div>
 
+
+            <div class="banner pl-5 h-auto w-full flex justify-center items-center pt-5 ">
+                <div class=" md:w-[85%] relative overflow-x-auto overflow-y-hidden md:overflow-x-hidden">
+                    <img src="madrid/men-ban.png" class="z-0 opacity-0 md:opacity-100" alt="">
+                    <div id="isi" class="cont scale-125 flex flex-row justify-center items-center grid-cols-4 absolute md:left-[320px] top-0 md:top-[120px] gap-5 md:gap-12 p-10">
+                        <div class="card hover:cursor-pointer hover:scale-105 relative duration-200">
+                            <img  src="madrid/jersey-men.png" class=" w-[200px] md:w-[150px] h-auto " alt="">
+                            <div class="judul">
+                                <p class="text-white font-medium flex justify-center items-center absolute top-5 md:top-[65px] left-2 md:left-[48px] text-[10px] md:text-[15px]">Jersey</p>
+                            </div>
+                        </div>
+                        <div class="card hover:cursor-pointer hover:scale-105 relative duration-200">
+                            <img  src="madrid/pant-men.png" class=" w-[200px] md:w-[150px] h-auto " alt="">
+                            <div class="judul">
+                                <p class="text-white font-medium flex justify-center items-center absolute top-5 md:top-[65px] left-1 md:left-[40px] text-[10px] md:text-[15px]">Breeches</p>
+                            </div>
+                        </div>
+                        <div class="card hover:cursor-pointer hover:scale-105 relative duration-200">
+                            <img  src="madrid/footwear-men.png" class=" w-[200px] md:w-[150px] h-auto " alt="">
+                            <div class="judul">
+                                <p class="text-white font-medium flex justify-center items-center absolute top-5 md:top-[65px] left-1 md:left-[40px] text-[10px] md:text-[15px]">Footwear</p>
+                            </div>
+                        </div>
+                        <div class="card hover:cursor-pointer hover:scale-105 relative duration-200">
+                            <img  src="madrid/acc-men.png" class=" w-[200px] md:w-[150px] h-auto " alt="">
+                            <div class="judul">
+                                <p class="text-white font-medium flex justify-center items-center absolute top-5 md:top-[65px] left-0 md:left-[30px] text-[9px] md:text-[15px]">Accessories</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <div class="product w-full product flex flex-col justify-center items-center pt-10 ">
                 <div class="area w-[85%]">
                     <p class="text-white text-[31px] font-medium">Featured for Men</p>
@@ -132,13 +165,44 @@
 
 
     <script>
-        const navItems = document.querySelector('.nav-items')
+        const navItems = document.querySelector('.nav-items');
 
         function onToggle(e) {
             e.name = e.name === 'menu' ? 'close' : 'menu'
             navItems.classList.toggle('left-[0]')
 
         }
+
+        const url = 'data.json';
+        const isi = document.getElementById('isi');
+
+        // fetch(url)
+        // .then(response => response.json())
+        // .then(data => {
+
+        //     const list = data;
+            
+        //     list.forEach(el => {
+        //         const kartu = document.createElement('div');
+        //         kartu.classList.add('hover:cursor-pointer hover:scale-105 relative duration-200');
+
+        //         const img = document.createElement('img');
+        //         img.classList.add('w-[150px] h-auto');
+        //         img.src = el.img;
+
+        //         const areatext = document.createElement('div');
+        //         areatext.classList.add('judul');
+
+        //         const text = document.createElement('p');
+        //         text.classList.add('text-white font-medium flex justify-center items-center absolute top-[65px] left-[48px]')
+        //         text.innerHTML = el.cat;
+
+        //         isi.append(kartu);
+        //         kartu.append(img);
+        //         kartu.append(areatext);
+        //         areatext.append(text);
+        //     })
+        // })
     </script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
