@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.css" rel="stylesheet" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baskervville:ital@0;1&display=swap" rel="stylesheet">
+
+    <style>
+        html {
+            overflow-x: hidden;
+        }
+    </style>
+</head>
+
+<body class="bg-black">
+
+
+
+
+
+
+    <!-- nav -->
+
+    <section class="w-full font-[Poppins] min-h-[940px] " id="navbar">
+        <div class="justify-center pt-10 ">
+            <nav class="py-4 flex w-[90%] mx-auto justify-between items-center  ">
+                <div class="logo flex justify-center items-center mx-auto md:mx-12">
+                    <ion-icon onclick="onToggle(this)" name="menu"
+                        class="text-3xl hover:cursor-pointer md:hidden mr-5 text-white rounded-sm ">
+                    </ion-icon>
+                    <!-- <img class="h-12 hidden md:block  "
+                        src="https://upload.wikimedia.org/wikipedia/en/thumb/5/56/Real_Madrid_CF.svg/1200px-Real_Madrid_CF.svg.png"
+                        alt="">
+                    <img class="h-12 px-2 hidden md:block" src="line.png" alt=""> -->
+                    <a href="ecom.html"><img class="h-12 md:h-14 hover:scale-95 duration-200 " src="madrid/adidas-old.png" alt=""></a>
+
+
+                </div>
+                <div
+                    class="nav-items duration-300 md:static absolute min-h-full  md:min-h-fit top-32  bg-black  z-10 md:bg-inherit text-white md:py-0 py-10 left-[-100%] w-[85]  md:flex justify-center md:w-auto px-10 md:px-0">
+                    <ul class="flex md:flex-row flex-col gap-10 md:w-full ">
+                        <li><a class="text-white  hover:text-white/50 duration-200 text-md font-medium"
+                                href="men.html">Men</a>
+                        </li>
+                        <li><a class="text-white  hover:text-white/50 duration-200 text-md font-normal"
+                                href="#">Women</a></li>
+                        <li><a class="text-white  hover:text-white/50 duration-200 text-md font-normal"
+                                href="#">Kids</a></li>
+                        <li><a class="text-white  hover:text-white/50 duration-200 text-md font-normal"
+                                href="#">Sport</a></li>
+                        <li><a class="text-white  hover:text-white/50 duration-200 text-md font-normal"
+                                href="#">Collection</a></li>
+                    </ul>
+                </div>
+                <div class="button-auth">
+                    <a href="login.html"
+                        class="relative inline-flex items-center justify-center p-2 px-5 mx-12 overflow-hidden font-medium text-gray-600 transition duration-300 ease-out rounded-[7px] shadow-xl group hover:ring-1 hover:ring-gray-500">
+                        <span
+                            class="absolute inset-0 w-full h-full bg-gradient-to-br from-gray-500 via-gray-950 to-black"></span>
+                        <span
+                            class="absolute bottom-0 right-0 block w-64 h-64 mb-32 mr-4 transition duration-500 origin-bottom-left transform rotate-45 translate-x-24 bg-gray-500 rounded-full opacity-50 group-hover:rotate-90 ease"></span>
+                        <span class="relative text-white ">Login</span>
+                    </a>
+                </div>
+            </nav>
+
+            <div class="jalan w-full flex justify-center items-center pt-14">
+                <div class="w-[85%]">
+                    <marquee class="text-white" scrollamount="5" behavior="alternate" direction="">
+                        <span class="text-red-500 mr-2 font-semibold">SALE hingga 60%</span> • <a class="ml-2 mr-5" href="#">Beli</a>
+                        <span class="text-red-500 mr-2 font-semibold">SALE hingga 60%</span> • <a class="ml-2 mr-5" href="#">Beli</a>
+                        <span class="text-red-500 mr-2 font-semibold">SALE hingga 60%</span> • <a class="ml-2 mr-5" href="#">Beli</a>
+                        <span class="text-red-500 mr-2 font-semibold">SALE hingga 60%</span> • <a class="ml-2 mr-5" href="#">Beli</a>
+                        <span class="text-red-500 mr-2 font-semibold">SALE hingga 60%</span> • <a class="ml-2 mr-5" href="#">Beli</a>
+                        <span class="text-red-500 mr-2 font-semibold">SALE hingga 60%</span> • <a class="ml-2 mr-5" href="#">Beli</a>
+                        <span class="text-red-500 mr-2 font-semibold">SALE hingga 60%</span> • <a class="ml-2 mr-5" href="#">Beli</a>
+                        <span class="text-red-500 mr-2 font-semibold">SALE hingga 60%</span> • <a class="ml-2 mr-5" href="#">Beli</a>
+                        <span class="text-red-500 mr-2 font-semibold">SALE hingga 60%</span> • <a class="ml-2 mr-5" href="#">Beli</a>
+                        <span class="text-red-500 mr-2 font-semibold">SALE hingga 60%</span> • <a class="ml-2 mr-5" href="#">Beli</a>
+                        <span class="text-red-500 mr-2 font-semibold">SALE hingga 60%</span> • <a class="ml-2 mr-5" href="#">Beli</a>
+                        <span class="text-red-500 mr-2 font-semibold">SALE hingga 60%</span> • <a class="ml-2 mr-5" href="#">Beli</a>
+                        <span class="text-red-500 mr-2 font-semibold">SALE hingga 60%</span> • <a class="ml-2 mr-5" href="#">Beli</a>
+                        <span class="text-red-500 mr-2 font-semibold">SALE hingga 60%</span> • <a class="ml-2 mr-5" href="#">Beli</a>
+                        <span class="text-red-500 mr-2 font-semibold">SALE hingga 60%</span> • <a class="ml-2 mr-5" href="#">Beli</a>
+                        <span class="text-red-500 mr-2 font-semibold">SALE hingga 60%</span> • <a class="ml-2 mr-5" href="#">Beli</a>
+                        <span class="text-red-500 mr-2 font-semibold">SALE hingga 60%</span> • <a class="ml-2 mr-5" href="#">Beli</a>
+                        <span class="text-red-500 mr-2 font-semibold">SALE hingga 60%</span> • <a class="ml-2 mr-5" href="#">Beli</a>
+                        <span class="text-red-500 mr-2 font-semibold">SALE hingga 60%</span> • <a class="ml-2 mr-5" href="#">Beli</a>
+                        <span class="text-red-500 mr-2 font-semibold">SALE hingga 60%</span> • <a class="ml-2 mr-5" href="#">Beli</a>
+                        <span class="text-red-500 mr-2 font-semibold">SALE hingga 60%</span> • <a class="ml-2 mr-5" href="#">Beli</a>
+                        <span class="text-red-500 mr-2 font-semibold">SALE hingga 60%</span> • <a class="ml-2 mr-5" href="#">Beli</a>
+                        <span class="text-red-500 mr-2 font-semibold">SALE hingga 60%</span> • <a class="ml-2 mr-5" href="#">Beli</a>
+                        <span class="text-red-500 mr-2 font-semibold">SALE hingga 60%</span> • <a class="ml-2 mr-5" href="#">Beli</a>
+                     </marquee>
+                </div>
+            </div>
+
+            <div class="product w-full product flex flex-col justify-center items-center pt-10 ">
+                <div class="area w-[85%]">
+                    <p class="text-white text-[31px] font-medium">Featured for Men</p>
+                        <p class="text-[#7d7d7d] text-[17px] font-normal">Recomendation that 'maybe' you Like
+                        </p>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+    </section>
+
+
+
+
+
+
+
+
+    <script>
+        const navItems = document.querySelector('.nav-items')
+
+        function onToggle(e) {
+            e.name = e.name === 'menu' ? 'close' : 'menu'
+            navItems.classList.toggle('left-[0]')
+
+        }
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>
