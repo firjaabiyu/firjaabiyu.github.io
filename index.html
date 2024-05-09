@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="shortcut icon" href="asset/prof.png" \type="image/x-icon">
+    <title>Portfolio by Firja</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.css" rel="stylesheet" />
+
+    <style>
+        html {
+            overflow-x: hidden;
+            padding: 0;
+            margin: 0;
+        }
+
+        @font-face {
+            font-family: 'outward';
+            src: url('/outward/outward-block-webfont.woff2') format('woff2'),
+                url('/outward/outward-block-webfont.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'patriot';
+            src: url('/patriot/patriot-black.woff2') format('woff2'),
+                url('/patriot/patriot-black.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'typefesse';
+            src: url('/typefesse/Typefesse_pleine.woff2') format('woff2'),
+                url('/typefesse/Typefesse_pleine.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+
+
+
+        .firja {
+            letter-spacing: 0.4px;
+        }
+
+        .work span {
+            padding-left: 0;
+            transition: 0.3s ease-in-out;
+        }
+
+        .work:hover span {
+            padding-left: 0.75rem;
+        }
+
+        .isi span {
+            transform: rotate(-45deg);
+            transition: 0.3s ease-in-out;
+        }
+
+        .isi:hover span {
+            transform: rotate(0deg);
+        }
+
+        .etc span {
+            background: transparent;
+            position: absolute;
+            visibility: hidden;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        .etc:hover span {
+            visibility: visible;
+            opacity: 1;
+            background-color: transparent;
+        }
+
+        .foot {
+            padding: 0;
+            margin: 0;
+            clip-path: inset(0% 0% 5% 0%);
+            /* Jarak 10% dari semua sisi */
+        }
+    </style>
+
+</head>
+
+<body class="scroll-auto">
+    <div
+        class="slide z-30 h-[50%] md:h-[50%] w-full md:p-16 p-5 flex flex-col min-h-fit top-[-100%] md:justify-center border-b-2 border-black justify-end items-end fixed bg-[#0466C8] duration-500 ease">
+
+        <ul
+            class="duration-200 flex md:flex-row flex-col gap-7 md:justify-between justify-start md:items-center ease-oute w-[100%]">
+            <div class="kiri">
+                <li class="text-white md:text-[100px] text-[50px] etc"><a href="index.html">HOME<span>
+                            <ion-icon name="arrow-back-outline"></ion-icon>
+                        </span></a></li>
+                <li class="text-white md:text-[100px] text-[50px] etc"><a href="project.html">PROJECT<span>
+                            <ion-icon name="arrow-back-outline"></ion-icon>
+                        </span></a></li>
+            </div>
+            <div class="kanan font-semibold text-left md:text-right text-white text-[20px]">
+                <li class="hover:underline duration-300"><a href="https://www.instagram.com/document.biyu/"
+                        target="_blank">Instagram</a></li>
+                <li class="hover:underline duration-300"><a href="https://www.linkedin.com/in/firjaabiyu/"
+                        target="_blank">Linkedin</a></li>
+                <li class="hover:underline duration-300"><a href="mailto:firjaabiyu@gmail.com">Email</a></li>
+            </div>
+
+        </ul>
+    </div>
+    <section class="w-full pt-8 " id="isi">
+        <!-- nav -->
+        <div class="flex justify-center ">
+            <nav class="flex z-50 justify-between mx-auto bg-transparent fixed items-center w-[92%]">
+                <div class="profile">
+                    <a href="index.html"><img id="profile" class="w-[50px]" class="cursor-pointer" src="asset/prof.png"
+                            alt="firja"></a>
+
+                </div>
+                <div class="menu">
+                    <!-- <p
+                        class="text-white border text-start border-black cursor-pointer font-[Jakarta Plus Sans] font-semibold bg-[#0466C8] text-[19px] rounded-full py-1 px-4">
+                        Etc.
+                    </p> -->
+                    <a href="#_" onclick="onToggle(this)"
+                        class="relative inline-flex items-center justify-center px-4 py-1 overflow-hidden text-white bg-[#0466C8] font-semibold font-[Jakarta Plus Sans] text-[19px] text-white transition duration-300 ease-out border border-black rounded-full group">
+                        <!-- <span
+                            class="absolute inset-0 flex items-center justify-center w-full h-full  duration-300 translate-y-full group-hover:translate-y-0 ease">
+                            Etc.
+                        </span>
+                        <span id="etc1" 
+                            class=" absolute flex items-center justify-center w-full h-full transition-all  duration-300 transform group-hover:-translate-y-full ease">
+                            Etc.</span> -->
+                        <span class="relative">Etc.</span>
+                    </a>
+                </div>
+            </nav>
+        </div>
+        <!-- judul -->
+        <div class=" justify-center items-center pt-5 md:block hidden">
+            <div class="area flex justify-center items-center">
+                <p class="text-[#0466C8] z-50 font-semibold text-[17px]">Personal Portfolio</p>
+            </div>
+        </div>
+        <!-- hero -->
+        <div class="flex flex-col w-full justify-center items-center ">
+            <div class="txt1  md:pt-40 mx-auto pl-[5px] md:pl-[20px] lg:pl-[30px] z-10 flex-wrap">
+                <p
+                    class="firja scale-x-[2.4] scale-y-[1] md:scale-x-[5.3] md:scale-y-[3.2] lg:scale-x-[11.1] lg:scale-y-[3.2] font-[outward] text-[200px] md:text-[200px] lg:text-[200px] text-center  text-[#0466C8]">
+                    FIRJA
+                </p>
+
+
+            </div>
+
+            <div
+                class="flex z-10 md:flex-row flex-col gap-4 mt-[-80px] md:mt-10 justify-between mx-auto items-start w-[92%]">
+                <div class="kiri">
+                    <p>Software Engineer & Student at <span class="cursor-pointer"><a href="https://idn.sch.id"
+                                target="_blank">IDN
+                                Boarding School</a></span></p>
+                </div>
+                <div class="kanan md:w-[50%]">
+                    <p class=" md:text-end md:text-[15px] text-[21px]"> I am skilled in using frameworks like
+                        TailwindCss to create attractive and responsive user interfaces, Now on i'm still learning about
+                        Backend (Laravel). </p>
+                </div>
+            </div>
+
+        </div>
+        <!-- project -->
+        <div class="flex flex-col mx-auto w-full justify-center items-center pt-7 md:pt-20">
+            <div class="area mx-auto flex flex-col w-[92%] justify-center items-start">
+                <div class="judul flex justify-center items-start text-left ">Things i've done... </div>
+                <div class="flex z-10  flex-col  gap-3 mt-3 md:mt-5 justify-between mx-auto items-start w-[100%]">
+                    <a class=" flex flex-col justify-between items-center w-[100%] duration-300" href="ocean.html">
+                        <div class="garis flex flex-row justify-center items-center w-[100%]">
+                            <svg height="10" width="1570" xmlns="http://www.w3.org/2000/svg">
+                                <line class="md:scale-100 scale-50" x1="" y1="10" x2="1570" y2="10"
+                                    style="stroke:black;stroke-width:3;" />
+                            </svg>
+                        </div>
+                        <div class="isi flex flex-row justify-between items-center w-[100%]">
+                            <div class="kiri flex flex-row justify-between items-center w-[100%]">
+                                <p class="md:text-[50px] text-[25px] font-medium">Ocean Website Article</p>
+                                <span>
+                                    <ion-icon class=" md:text-[50px] text-[23px] " name="arrow-forward-outline">
+                                    </ion-icon>
+                                </span>
+                            </div>
+                        </div>
+                    </a>
+                    <a class="flex flex-col justify-between items-center w-[100%] duration-300" href="mclaren.html">
+                        <div class="garis flex flex-row justify-center items-center w-[100%]">
+                            <svg height="10" width="1570" xmlns="http://www.w3.org/2000/svg">
+                                <line class="md:scale-100 scale-50" x1="" y1="10" x2="1570" y2="10"
+                                    style="stroke:black;stroke-width:3;" />
+                            </svg>
+                        </div>
+                        <div class="isi flex flex-row justify-between items-center w-[100%]">
+                            <div class="kiri flex flex-row justify-between items-center w-[100%]">
+                                <p class="md:text-[50px] text-[25px] font-medium">Mclaren Website Article</p>
+                                <span>
+                                    <ion-icon class=" md:text-[50px] text-[23px] " name="arrow-forward-outline">
+                                    </ion-icon>
+                                </span>
+                            </div>
+                        </div>
+                    </a>
+                    <a class="flex flex-col justify-between items-center w-[100%] duration-300" href="adidas.html">
+                        <div class="garis flex flex-row justify-center items-center w-[100%]">
+                            <svg height="10" width="1570" xmlns="http://www.w3.org/2000/svg">
+                                <line class="md:scale-100 scale-50" x1="" y1="10" x2="1570" y2="10"
+                                    style="stroke:black;stroke-width:3;" />
+                            </svg>
+                        </div>
+                        <div class="isi flex flex-row justify-between items-center w-[100%]">
+                            <div class="kiri flex flex-row justify-between items-center w-[100%]">
+                                <p class="md:text-[50px] text-[25px] font-medium">Adidas Website Design</p>
+                                <span>
+                                    <ion-icon class=" md:text-[50px] text-[23px] " name="arrow-forward-outline">
+                                    </ion-icon>
+                                </span>
+                            </div>
+                        </div>
+                    </a>
+                    <a class="flex flex-col justify-between items-center w-[100%] duration-300" href="#">
+                        <div class="garis flex flex-row justify-center items-center w-[100%]">
+                            <svg height="10" width="1570" xmlns="http://www.w3.org/2000/svg">
+                                <line class="md:scale-100 scale-50" x1="" y1="10" x2="1570" y2="10"
+                                    style="stroke:black;stroke-width:3;" />
+                            </svg>
+                        </div>
+                        <div class="isi flex flex-row justify-between items-center w-[100%]">
+                            <div class="kiri flex flex-row justify-between items-center w-[100%]">
+                                <p class="md:text-[50px] text-[25px] font-medium">Article Website</p>
+                                <span>
+                                    <ion-icon class=" md:text-[50px] text-[23px] " name="arrow-forward-outline">
+                                    </ion-icon>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="garis flex flex-row justify-center items-center w-[100%] pt-3">
+                            <svg height="10" width="1570" xmlns="http://www.w3.org/2000/svg">
+                                <line class="md:scale-100 scale-50" x1="" y1="10" x2="1570" y2="10"
+                                    style="stroke:black;stroke-width:3;" />
+                            </svg>
+                        </div>
+                    </a>
+                </div>
+                <div class="more md:pt-8 md:pb-8  pt-5">
+                    <p class=" work md:text-[100px] text-[40px] text-[#0466C8] font-semibold"><a href="project.html">ALL
+                            WORK <span>
+                                <ion-icon class="md:text-[80px] text-[30px] " name="arrow-forward-outline"></ion-icon>
+                            </span></a></p>
+                </div>
+            </div>
+        </div>
+        <!-- footer -->
+        <div class="flex justify-center items-start md:h-fit h-[240px]  w-full bg-[#0466C8]">
+            <div class="w-[92%] flex flex-col justify-center items-center">
+                <ul
+                    class="w-[100%] z-20 md:mt-[30px] mt-[20px] flex md:flex-row justify-between md:items-start items-center">
+                    <div
+                        class="kecil font-semibold text-left text-white text-[25px] md:text-[30px] besar w-[50%] flex flex-row gap-56 md:gap-20 justify-start items-start">
+                        <div class="kanan ">
+                            <li class="hover:underline duration-300"><a href="https://www.instagram.com/document.biyu/"
+                                    target="_blank">Instagram</a></li>
+                            <li class="hover:underline duration-300"><a href="https://www.linkedin.com/in/firjaabiyu/"
+                                    target="_blank">Linkedin</a></li>
+                            <li class="hover:underline duration-300"><a href="mailto:firjaabiyu@gmail.com">Email</a>
+                            </li>
+                        </div>
+                    </div>
+                    <div class="cont flex md:flex-row flex-col md:justify-center items-end md:items-center gap-3 ">
+                        <img id="profile" class="w-[50px] md:hidden block cursor-pointer" src="asset/prof.png"
+                            alt="firja">
+                        <p
+                            class="text-white bg-black hover:bg-[#0466C8] border border-black rounded-full py-1 px-4 cursor-pointer  md:text-[20px] font-[Jakarta Plus Sans] font-semibold">
+                            <a href="https://bento.me/firja" target="_blank">Contact Me</a></p>
+                        <img id="profile" class="w-[50px] md:block hidden cursor-pointer" src="asset/prof.png"
+                            alt="firja">
+                    </div>
+                </ul>
+                <!-- <p
+                    class="text-white mt-[-90px] w-full flex justify-center items-center font-bold foot font-[Jakarta Plus Sans] text-[434px]">
+                    Thanks!
+                </p> -->
+                <svg width="1570" class="md:mt-[40px]  md:block hidden " height="335" viewBox="0 0 1606 300" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M82.8 329V64.26H0.774V5.66997H230.794V64.26H150.07V329H82.8ZM259.333 329V0.461987H324.433V138.908L316.621 128.492C322.118 114.315 330.943 103.899 343.095 97.244C355.536 90.3 370.003 86.828 386.495 86.828C404.434 86.828 420.058 90.5893 433.367 98.112C446.966 105.635 457.526 116.195 465.049 129.794C472.572 143.103 476.333 158.727 476.333 176.666V329H411.233V190.554C411.233 181.295 409.352 173.339 405.591 166.684C402.119 160.029 397.056 154.821 390.401 151.06C384.036 147.299 376.513 145.418 367.833 145.418C359.442 145.418 351.92 147.299 345.265 151.06C338.61 154.821 333.402 160.029 329.641 166.684C326.169 173.339 324.433 181.295 324.433 190.554V329H259.333ZM592.486 334.208C575.415 334.208 560.659 331.459 548.218 325.962C535.776 320.465 526.228 312.653 519.574 302.526C512.919 292.11 509.592 279.813 509.592 265.636C509.592 252.327 512.63 240.609 518.706 230.482C524.782 220.066 534.04 211.386 546.482 204.442C559.212 197.498 574.981 192.579 593.788 189.686L666.266 177.968V225.708L605.506 236.558C596.247 238.294 589.158 241.332 584.24 245.672C579.321 249.723 576.862 255.654 576.862 263.466C576.862 270.699 579.61 276.341 585.108 280.392C590.605 284.443 597.404 286.468 605.506 286.468C616.211 286.468 625.614 284.153 633.716 279.524C641.817 274.895 648.038 268.674 652.378 260.862C657.007 252.761 659.322 243.936 659.322 234.388V172.76C659.322 163.791 655.705 156.268 648.472 150.192C641.528 144.116 631.98 141.078 619.828 141.078C608.254 141.078 597.983 144.261 589.014 150.626C580.334 156.991 573.968 165.382 569.918 175.798L517.838 151.06C522.467 137.751 529.845 126.322 539.972 116.774C550.098 107.226 562.25 99.848 576.428 94.64C590.605 89.432 606.084 86.828 622.866 86.828C642.83 86.828 660.479 90.4447 675.814 97.678C691.148 104.911 703.011 115.038 711.402 128.058C720.082 140.789 724.422 155.689 724.422 172.76V329H663.662V290.808L678.418 288.204C671.474 298.62 663.806 307.3 655.416 314.244C647.025 320.899 637.622 325.817 627.206 329C616.79 332.472 605.216 334.208 592.486 334.208ZM772.165 329V92.036H832.925V138.908L829.453 128.492C834.95 114.315 843.775 103.899 855.927 97.244C868.368 90.3 882.835 86.828 899.327 86.828C917.266 86.828 932.89 90.5893 946.199 98.112C959.798 105.635 970.358 116.195 977.881 129.794C985.404 143.103 989.165 158.727 989.165 176.666V329H924.065V190.554C924.065 181.295 922.184 173.339 918.423 166.684C914.951 160.029 909.888 154.821 903.233 151.06C896.868 147.299 889.345 145.418 880.665 145.418C872.274 145.418 864.752 147.299 858.097 151.06C851.442 154.821 846.234 160.029 842.473 166.684C839.001 173.339 837.265 181.295 837.265 190.554V329H772.165ZM1031.97 329V0.461987H1097.07V210.952L1072.77 203.14L1177.36 92.036H1257.65L1171.72 187.516L1257.22 329H1183.44L1111.83 208.782L1149.59 199.234L1077.11 278.222L1097.07 240.464V329H1031.97ZM1379.14 334.208C1353.1 334.208 1330.39 328.132 1311.01 315.98C1291.91 303.539 1278.89 286.902 1271.95 266.07L1319.69 243.502C1325.76 256.233 1334.01 266.215 1344.42 273.448C1354.84 280.681 1366.41 284.298 1379.14 284.298C1388.4 284.298 1395.49 282.417 1400.41 278.656C1405.33 274.895 1407.79 269.687 1407.79 263.032C1407.79 259.56 1406.92 256.667 1405.18 254.352C1403.45 251.748 1400.84 249.433 1397.37 247.408C1393.9 245.383 1389.56 243.647 1384.35 242.2L1343.99 230.916C1324.61 225.419 1309.7 216.594 1299.29 204.442C1288.87 192.001 1283.66 177.389 1283.66 160.608C1283.66 145.852 1287.43 132.977 1294.95 121.982C1302.47 110.987 1313.03 102.452 1326.63 96.376C1340.23 90.0107 1355.85 86.828 1373.5 86.828C1396.65 86.828 1416.9 92.3253 1434.26 103.32C1451.91 114.025 1464.35 129.215 1471.59 148.89L1423.41 171.458C1419.94 161.621 1413.58 153.809 1404.32 148.022C1395.35 141.946 1385.08 138.908 1373.5 138.908C1365.11 138.908 1358.46 140.644 1353.54 144.116C1348.91 147.588 1346.59 152.362 1346.59 158.438C1346.59 161.621 1347.46 164.514 1349.2 167.118C1350.93 169.722 1353.68 172.037 1357.44 174.062C1361.5 176.087 1366.41 177.968 1372.2 179.704L1409.96 190.988C1429.63 196.775 1444.68 205.599 1455.09 217.462C1465.51 229.035 1470.72 243.357 1470.72 260.428C1470.72 275.184 1466.81 288.059 1459 299.054C1451.48 310.049 1440.92 318.729 1427.32 325.094C1413.72 331.17 1397.66 334.208 1379.14 334.208ZM1544.35 229.18L1540.01 5.66997H1605.11L1600.77 229.18H1544.35ZM1540.01 329V263.9H1605.11V329H1540.01Z"
+                        fill="white" />
+                </svg>
+
+                <svg width="308" height="60" class="md:hidden block mt-[47px] " viewBox="0 0 331 65" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M17.8399 67.8823V13.4706H0.981195V1.42868H48.2569V13.4706H31.6658V67.8823H17.8399ZM54.1225 67.8823V0.358294H67.5024V28.8129L65.8968 26.6722C67.0267 23.7583 68.8404 21.6175 71.338 20.2498C73.8951 18.8226 76.8684 18.109 80.258 18.109C83.9449 18.109 87.1561 18.8821 89.8915 20.4282C92.6864 21.9743 94.8569 24.1448 96.4031 26.9397C97.9492 29.6752 98.7223 32.8864 98.7223 36.5733V67.8823H85.3423V39.4277C85.3423 37.5248 84.9558 35.8894 84.1827 34.5217C83.4691 33.154 82.4285 32.0836 81.0608 31.3105C79.7525 30.5375 78.2064 30.1509 76.4224 30.1509C74.6979 30.1509 73.1517 30.5375 71.784 31.3105C70.4163 32.0836 69.3459 33.154 68.5728 34.5217C67.8592 35.8894 67.5024 37.5248 67.5024 39.4277V67.8823H54.1225ZM122.595 68.9527C119.086 68.9527 116.054 68.3878 113.497 67.2579C110.94 66.1281 108.977 64.5225 107.609 62.4412C106.242 60.3004 105.558 57.773 105.558 54.8592C105.558 52.1237 106.182 49.7154 107.431 47.634C108.68 45.4932 110.583 43.7093 113.14 42.2821C115.756 40.8549 118.997 39.8439 122.863 39.2493L137.759 36.8409V46.6528L125.271 48.8828C123.368 49.2396 121.911 49.864 120.9 50.756C119.889 51.5885 119.384 52.8076 119.384 54.4132C119.384 55.8999 119.949 57.0595 121.079 57.892C122.208 58.7245 123.606 59.1408 125.271 59.1408C127.471 59.1408 129.404 58.665 131.069 57.7136C132.734 56.7621 134.013 55.4836 134.904 53.878C135.856 52.2129 136.332 50.3992 136.332 48.4368V35.7705C136.332 33.927 135.588 32.3809 134.102 31.1321C132.675 29.8833 130.712 29.2589 128.215 29.2589C125.836 29.2589 123.725 29.9131 121.881 31.2213C120.097 32.5296 118.789 34.2541 117.957 36.3949L107.253 31.3105C108.204 28.5751 109.721 26.2262 111.802 24.2638C113.883 22.3014 116.381 20.785 119.295 19.7146C122.208 18.6442 125.39 18.109 128.839 18.109C132.942 18.109 136.57 18.8523 139.721 20.339C142.873 21.8256 145.311 23.907 147.036 26.5829C148.82 29.1995 149.712 32.262 149.712 35.7705V67.8823H137.224V60.0328L140.256 59.4976C138.829 61.6384 137.253 63.4223 135.529 64.8495C133.804 66.2173 131.872 67.2282 129.731 67.8823C127.59 68.5959 125.211 68.9527 122.595 68.9527ZM159.524 67.8823V19.1794H172.012V28.8129L171.299 26.6722C172.428 23.7583 174.242 21.6175 176.74 20.2498C179.297 18.8226 182.27 18.109 185.66 18.109C189.347 18.109 192.558 18.8821 195.293 20.4282C198.088 21.9743 200.259 24.1448 201.805 26.9397C203.351 29.6752 204.124 32.8864 204.124 36.5733V67.8823H190.744V39.4277C190.744 37.5248 190.358 35.8894 189.584 34.5217C188.871 33.154 187.83 32.0836 186.463 31.3105C185.154 30.5375 183.608 30.1509 181.824 30.1509C180.1 30.1509 178.553 30.5375 177.186 31.3105C175.818 32.0836 174.748 33.154 173.975 34.5217C173.261 35.8894 172.904 37.5248 172.904 39.4277V67.8823H159.524ZM212.922 67.8823V0.358294H226.302V43.6201L221.307 42.0145L242.804 19.1794H259.306L241.644 38.8033L259.217 67.8823H244.053L229.335 43.1741L237.095 41.2117L222.199 57.446L226.302 49.6856V67.8823H212.922ZM284.276 68.9527C278.924 68.9527 274.256 67.7039 270.272 65.2063C266.347 62.6493 263.671 59.23 262.244 54.9484L272.056 50.31C273.305 52.9265 274.999 54.9781 277.14 56.4648C279.281 57.9514 281.66 58.6948 284.276 58.6948C286.179 58.6948 287.636 58.3082 288.647 57.5352C289.658 56.7621 290.163 55.6917 290.163 54.324C290.163 53.6104 289.985 53.0157 289.628 52.54C289.271 52.0048 288.736 51.5291 288.022 51.1128C287.309 50.6966 286.417 50.3398 285.346 50.0424L277.051 47.7232C273.067 46.5934 270.004 44.7797 267.863 42.2821C265.723 39.725 264.652 36.722 264.652 33.2729C264.652 30.2401 265.425 27.5939 266.971 25.3342C268.517 23.0744 270.688 21.3202 273.483 20.0714C276.278 18.7631 279.489 18.109 283.116 18.109C287.874 18.109 292.036 19.2389 295.604 21.4986C299.232 23.6988 301.789 26.8208 303.276 30.8645L293.374 35.5029C292.661 33.481 291.353 31.8755 289.45 30.6861C287.606 29.4373 285.495 28.8129 283.116 28.8129C281.392 28.8129 280.024 29.1697 279.013 29.8833C278.062 30.5969 277.586 31.5781 277.586 32.8269C277.586 33.481 277.764 34.0757 278.121 34.6109C278.478 35.1461 279.043 35.6218 279.816 36.0381C280.649 36.4544 281.66 36.8409 282.849 37.1977L290.609 39.5169C294.653 40.7062 297.745 42.5199 299.886 44.9581C302.027 47.3367 303.097 50.2803 303.097 53.7888C303.097 56.8216 302.294 59.4678 300.689 61.7276C299.143 63.9873 296.972 65.7713 294.177 67.0795C291.382 68.3283 288.082 68.9527 284.276 68.9527ZM318.23 47.3664L317.338 1.42868H330.718L329.826 47.3664H318.23ZM317.338 67.8823V54.5024H330.718V67.8823H317.338Z"
+                        fill="white" />
+                </svg>
+
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- <div class="h-[200px]"></div> -->
+
+
+
+
+
+
+
+    <script>
+        // const navItems = document.querySelector('.slide')
+
+        // function onToggle(e) {
+        //     navItems.classList.toggle('top-[0]')
+        // }
+
+        const navItems = document.querySelector('.slide');
+        const button = document.querySelector('[onclick="onToggle(this)"]');
+        const balik = document.getElementById('etc1')
+
+        function onToggle(e) {
+            navItems.classList.toggle('top-[0]'); // Toggling the 'top-[0]' class
+
+            // Check if 'top-[0]' class is active
+            const isOpen = navItems.classList.contains('top-[0]');
+
+            // Update button text based on the state
+            if (isOpen) {
+                button.innerText = 'Close';
+            } else {
+                button.innerText = 'Etc.';
+            }
+        }
+
+
+
+        // Dapatkan elemen gambar berdasarkan ID atau kelas
+        const profile = document.getElementById('profile');
+
+        // Fungsi untuk menangani peristiwa scroll
+        function handleScroll() {
+            // Dapatkan posisi scroll vertikal halaman
+            const scrollPosition = window.scrollY;
+
+            // Menghitung rotasi berdasarkan posisi scroll
+            // Anda dapat mengatur nilai ini sesuai dengan kebutuhan Anda
+            const rotationDegree = scrollPosition * 0.5; // Sesuaikan faktor rotasi
+
+            // Terapkan rotasi ke elemen gambar
+            profile.style.transform = `rotate(${rotationDegree}deg)`;
+        }
+
+        // Tambahkan event listener untuk menangani peristiwa scroll
+        window.addEventListener('scroll', handleScroll);
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+
+</body>
+
+</html>

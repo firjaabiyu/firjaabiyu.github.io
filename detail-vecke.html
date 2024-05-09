@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="shortcut icon" href="asset/prof.png" \type="image/x-icon">
+    <title>Portfolio by Firja</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.css" rel="stylesheet" />
+
+    <style>
+        html {
+            overflow-x: hidden;
+            padding: 0;
+            margin: 0;
+        }
+
+        @font-face {
+            font-family: 'outward';
+            src: url('/outward/outward-block-webfont.woff2') format('woff2'),
+                url('/outward/outward-block-webfont.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'patriot';
+            src: url('/patriot/patriot-black.woff2') format('woff2'),
+                url('/patriot/patriot-black.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'typefesse';
+            src: url('/typefesse/Typefesse_pleine.woff2') format('woff2'),
+                url('/typefesse/Typefesse_pleine.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+
+
+
+        .firja {
+            letter-spacing: 0.4px;
+        }
+
+        .work span {
+            padding-left: 0;
+            transition: 0.3s ease-in-out;
+        }
+
+        .work:hover span {
+            padding-left: 0.75rem;
+        }
+
+        .isi span {
+            transform: rotate(-45deg);
+            transition: 0.3s ease-in-out;
+        }
+
+        .isi:hover span {
+            transform: rotate(0deg);
+        }
+
+        .etc span {
+            background: transparent;
+            position: absolute;
+            visibility: hidden;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        .etc:hover span {
+            visibility: visible;
+            opacity: 1;
+            background-color: transparent;
+        }
+
+        .foot {
+            padding: 0;
+            margin: 0;
+            clip-path: inset(0% 0% 5% 0%);
+            /* Jarak 10% dari semua sisi */
+        }
+    </style>
+
+</head>
+
+<body class="scroll-auto">
+    <section class="w-full pt-8 " id="isi">
+        <!-- nav -->
+        <div class="flex justify-center pb-7 ">
+            <nav class="flex z-50 justify-between mx-auto bg-transparent  items-center w-[86%] md:w-[72%]">
+                <div class="profile flex justify-center items-center gap-2">
+                    <a href="project.html"><img id="" class="md:w-[50px] w-[40px] hover:opacity-50" class="cursor-pointer"
+                            src="asset/vecke-icn.png" alt="vecke"></a>
+
+
+                    <div class="text">
+                        <p class="font-semibold md:text-[20px]">UI/UX Vecke App Mobile</p>
+                        <p class="md:text-[13px] text-[10px]">Blog travel destination in Indonesia</p>
+                    </div>
+                </div>
+                <div class="menu">
+                    <a href="project.html" class="text-[#a1a1a1] hover:text-black text-[30px]">
+                        <ion-icon class="md:hidden block" name="caret-forward-outline"></ion-icon>
+                        <ion-icon class="md:block hidden" name="albums"></ion-icon>
+                        <!-- <p class="md:hidden block">X</p> -->
+                    </a>
+                </div>
+            </nav>
+        </div>
+        <!-- img -->
+        <div class="flex justify-center items-center pb-1">
+            <div class="flex justify-center items-center w-[86%] md:w-[72%]">
+                <img src="asset/vecke-mock.png"  alt="">
+            </div>
+        </div>
+        <!-- layout -->
+        <div class="flex justify-center items-center pb-14">
+            <div class="flex flex-col justify-start gap-6 items-start w-[86%] md:w-[72%]">
+                <div class="judul flex flex-col justify-start items-start w-full">
+                    <p class="text-[40px] font-semibold">Onboarding</p>
+                    <p>9 Main Screens</p>
+                </div>
+                <div class="gambar grid flex-row gap-5 justify-start items-center grid-cols-2 md:grid-cols-4">
+                    <img src="asset/vecke-1.png" class="rounded-[16px] md:grayscale md:hover:grayscale-0 border" alt="">
+                    <img src="asset/vecke-2.png" class="rounded-[16px] md:grayscale md:hover:grayscale-0 border" alt="">
+                    <img src="asset/vecke-3.png" class="rounded-[16px] md:grayscale md:hover:grayscale-0 border" alt="">
+                    <img src="asset/vecke-4.png" class="rounded-[16px] md:grayscale md:hover:grayscale-0 border" alt="">
+                    <img src="asset/vecke-5.png" class="rounded-[16px] md:grayscale md:hover:grayscale-0 border" alt="">
+                    <img src="asset/vecke-6.png" class="rounded-[16px] md:grayscale md:hover:grayscale-0 border" alt="">
+                    <img src="asset/vecke-7.png" class="rounded-[16px] md:grayscale md:hover:grayscale-0 border" alt="">
+                    <img src="asset/vecke-8.png" class="rounded-[16px] md:grayscale md:hover:grayscale-0 border" alt="">
+                    <img src="asset/vecke-9.png" class="rounded-[16px] md:grayscale md:hover:grayscale-0 border" alt="">
+                </div>
+            </div>
+        </div>
+        <!-- footer -->
+        <div class="flex justify-center items-center pb-6">
+            <div class="area flex md:flex-row flex-col gap-5 justify-between items-center w-[72%]">
+                <div class="figma">
+                    <a target="_blank" href="https://www.figma.com/proto/84jhXkbNNnMnOOBgUh193x/Lomba-UI%2FUX-App?page-id=1%3A79&type=design&node-id=3-21&viewport=235%2C331%2C0.1&t=XOe9aUKIKGJNy7Bs-1&scaling=scale-down&starting-point-node-id=3%3A6">
+                        <p class="text-[20px] font-medium bg-[#121212] text-[#e0e0e0] px-3 py-2 rounded-[10px] hover:opacity-80">
+                            <ion-icon name="logo-figma"></ion-icon>
+                            Prototype Here</p>
+                    </a>
+                </div>
+                <div class="flex justify-end items-center text-end">
+                    <p>© firja. all rights reserved</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- <div class="h-[200px]"></div> -->
+
+
+
+
+
+
+
+    <script>
+
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+
+</body>
+
+</html>
