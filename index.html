@@ -48,6 +48,34 @@
 
 
 
+        body{
+            cursor: none;
+        }
+
+        .cursor-dot{
+            width: 10px;
+            height: 10px;
+            background-color: black;
+            /* border: 2px solid black; */
+            /* mix-blend-mode: difference; */
+        }
+        .cursor-outline{
+            width: 30px;
+            height: 30px;
+            border: 2px solid transparent;
+            /* mix-blend-mode: difference; */
+        }
+        .cursor-dot,
+        .cursor-outline{
+            position: fixed;
+            top: 0;
+            left: 0;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+            z-index: 60;
+            pointer-events: none;
+            /* mix-blend-mode: difference; */
+        }
 
         .firja {
             letter-spacing: 0.4px;
@@ -96,16 +124,20 @@
 </head>
 
 <body class="scroll-auto">
+
+    <div class="cursor-dot" data-cursor-dot></div>
+    <div class="cursor-outline" data-cursor-outline></div>
+
     <div
-        class="slide z-30 h-[50%] md:h-[50%] w-full md:p-16 p-5 flex flex-col min-h-fit top-[-100%] md:justify-center border-b-2 border-black justify-end items-end fixed bg-[#0466C8] duration-500 ease">
+        class="slide z-50 h-[50%] md:h-[50%] w-full md:p-16 p-5 flex flex-col min-h-fit top-[-100%] md:justify-center border-b-2 border-black justify-end items-end fixed bg-[#0466C8] duration-500 ease">
 
         <ul
             class="duration-200 flex md:flex-row flex-col gap-7 md:justify-between justify-start md:items-center ease-oute w-[100%]">
             <div class="kiri">
-                <li class="text-white md:text-[100px] text-[50px] etc"><a href="index.html">HOME<span>
+                <li class="text-white md:text-[100px] text-[50px] etc"><a class="cursor-none" href="index.html">HOME<span>
                             <ion-icon name="arrow-back-outline"></ion-icon>
                         </span></a></li>
-                <li class="text-white md:text-[100px] text-[50px] etc"><a href="project.html">PROJECT<span>
+                <li class="text-white md:text-[100px] text-[50px] etc"><a class="cursor-none" href="project.html">PROJECT<span>
                             <ion-icon name="arrow-back-outline"></ion-icon>
                         </span></a></li>
             </div>
@@ -124,17 +156,17 @@
         <div class="flex justify-center ">
             <nav class="flex z-50 justify-between mx-auto bg-transparent fixed items-center w-[92%]">
                 <div class="profile">
-                    <a href="index.html"><img id="profile" class="w-[50px]" class="cursor-pointer" src="asset/prof.png"
+                    <a href="index.html"><img id="profile" class="w-[50px] cursor-none" class="" src="asset/prof.png"
                             alt="firja"></a>
 
                 </div>
                 <div class="menu">
                     <!-- <p
-                        class="text-white border text-start border-black cursor-pointer font-[Jakarta Plus Sans] font-semibold bg-[#0466C8] text-[19px] rounded-full py-1 px-4">
+                        class="text-white border text-start border-black  font-[Jakarta Plus Sans] font-semibold bg-[#0466C8] text-[19px] rounded-full py-1 px-4">
                         Etc.
                     </p> -->
                     <a href="#_" onclick="onToggle(this)"
-                        class="relative inline-flex items-center justify-center px-4 py-1 overflow-hidden text-white bg-[#0466C8] font-semibold font-[Jakarta Plus Sans] text-[19px] text-white transition duration-300 ease-out border border-black rounded-full group">
+                        class="relative cursor-none inline-flex items-center justify-center px-4 py-1 overflow-hidden text-white bg-[#0466C8] font-semibold font-[Jakarta Plus Sans] text-[19px] text-white transition duration-300 ease-out border border-black rounded-full group">
                         <!-- <span
                             class="absolute inset-0 flex items-center justify-center w-full h-full  duration-300 translate-y-full group-hover:translate-y-0 ease">
                             Etc.
@@ -150,12 +182,12 @@
         <!-- judul -->
         <div class=" justify-center items-center pt-5 md:block hidden">
             <div class="area flex justify-center items-center">
-                <p class="text-[#0466C8] z-50 font-semibold text-[17px]">Personal Portfolio</p>
+                <p class="text-[#0466C8] z-10 font-semibold text-[17px]">Personal Portfolio</p>
             </div>
         </div>
         <!-- hero -->
         <div class="flex flex-col w-full justify-center items-center ">
-            <div class="txt1  md:pt-40 mx-auto pl-[5px] md:pl-[20px] lg:pl-[30px] z-10 flex-wrap">
+            <div class="txt1  md:pt-40 mx-auto pl-[5px] md:pl-[20px] lg:pl-[30px] -z-10 flex-wrap">
                 <p
                     class="firja scale-x-[2.4] scale-y-[1] md:scale-x-[5.3] md:scale-y-[3.2] lg:scale-x-[11.1] lg:scale-y-[3.2] font-[outward] text-[200px] md:text-[200px] lg:text-[200px] text-center  text-[#0466C8]">
                     FIRJA
@@ -167,7 +199,7 @@
             <div
                 class="flex z-10 md:flex-row flex-col gap-4 mt-[-80px] md:mt-10 justify-between mx-auto items-start w-[92%]">
                 <div class="kiri">
-                    <p>Software Engineer & Student at <span class="cursor-pointer"><a href="https://idn.sch.id"
+                    <p>Software Engineer & Student at <span class=""><a href="https://idn.sch.id"
                                 target="_blank">IDN
                                 Boarding School</a></span></p>
                 </div>
@@ -182,9 +214,9 @@
         <!-- project -->
         <div class="flex flex-col mx-auto w-full justify-center items-center pt-7 md:pt-20">
             <div class="area mx-auto flex flex-col w-[92%] justify-center items-start">
-                <div class="judul flex justify-center items-start text-left ">Things i've done... </div>
-                <div class="flex z-10  flex-col  gap-3 mt-3 md:mt-5 justify-between mx-auto items-start w-[100%]">
-                    <a class=" flex flex-col justify-between items-center w-[100%] duration-300" href="ocean.html">
+                <div class="judul  flex justify-center items-start text-left ">Things i've done... </div>
+                <div class="flex z-10 flex-col  gap-3 mt-3 md:mt-5 justify-between mx-auto items-start w-[100%]">
+                    <a class="cursor-none flex flex-col justify-between items-center w-[100%] duration-300" href="ocean.html">
                         <div class="garis flex flex-row justify-center items-center w-[100%]">
                             <svg height="10" width="1570" xmlns="http://www.w3.org/2000/svg">
                                 <line class="md:scale-100 scale-50" x1="" y1="10" x2="1570" y2="10"
@@ -201,7 +233,7 @@
                             </div>
                         </div>
                     </a>
-                    <a class="flex flex-col justify-between items-center w-[100%] duration-300" href="mclaren.html">
+                    <a class="cursor-none flex flex-col justify-between items-center w-[100%] duration-300" href="mclaren.html">
                         <div class="garis flex flex-row justify-center items-center w-[100%]">
                             <svg height="10" width="1570" xmlns="http://www.w3.org/2000/svg">
                                 <line class="md:scale-100 scale-50" x1="" y1="10" x2="1570" y2="10"
@@ -218,7 +250,7 @@
                             </div>
                         </div>
                     </a>
-                    <a class="flex flex-col justify-between items-center w-[100%] duration-300" href="adidas.html">
+                    <a class="cursor-none flex flex-col justify-between items-center w-[100%] duration-300" href="adidas.html">
                         <div class="garis flex flex-row justify-center items-center w-[100%]">
                             <svg height="10" width="1570" xmlns="http://www.w3.org/2000/svg">
                                 <line class="md:scale-100 scale-50" x1="" y1="10" x2="1570" y2="10"
@@ -235,7 +267,7 @@
                             </div>
                         </div>
                     </a>
-                    <a class="flex flex-col justify-between items-center w-[100%] duration-300" href="quran.html">
+                    <a class="cursor-none flex flex-col justify-between items-center w-[100%] duration-300" href="quran.html">
                         <div class="garis flex flex-row justify-center items-center w-[100%]">
                             <svg height="10" width="1570" xmlns="http://www.w3.org/2000/svg">
                                 <line class="md:scale-100 scale-50" x1="" y1="10" x2="1570" y2="10"
@@ -260,7 +292,7 @@
                     </a>
                 </div>
                 <div class="more md:pt-8 md:pb-8  pt-5">
-                    <p class=" work md:text-[100px] text-[40px] text-[#0466C8] font-semibold"><a href="project.html">ALL
+                    <p class=" work md:text-[100px] text-[40px] text-[#0466C8]  font-semibold"><a class="cursor-none" href="project.html">ALL
                             WORK <span>
                                 <ion-icon class="md:text-[80px] text-[30px] " name="arrow-forward-outline"></ion-icon>
                             </span></a></p>
@@ -284,12 +316,12 @@
                         </div>
                     </div>
                     <div class="cont flex md:flex-row flex-col md:justify-center items-end md:items-center gap-3 ">
-                        <img id="profile" class="w-[50px] md:hidden block cursor-pointer" src="asset/prof.png"
+                        <img id="profile" class="w-[50px] md:hidden block " src="asset/prof.png"
                             alt="firja">
                         <p
-                            class="text-white bg-black hover:bg-[#0466C8] border border-black rounded-full py-1 px-4 cursor-pointer  md:text-[20px] font-[Jakarta Plus Sans] font-semibold">
+                            class="text-white bg-black hover:bg-[#0466C8] border border-black rounded-full py-1 px-4   md:text-[20px] font-[Jakarta Plus Sans] font-semibold">
                             <a href="https://bento.me/firja" target="_blank">Contact Me</a></p>
-                        <img id="profile" class="w-[50px] md:block hidden cursor-pointer" src="asset/prof.png"
+                        <img id="profile" class="w-[50px] md:block hidden " src="asset/prof.png"
                             alt="firja">
                     </div>
                 </ul>
@@ -326,6 +358,24 @@
 
 
     <script>
+
+        const cursorDot = document.querySelector("[data-cursor-dot]");
+        const cursorOutline = document.querySelector("[data-cursor-outline]");
+
+        window.addEventListener("mousemove", function(ja) {
+            const posX = ja.clientX;
+            const posY = ja.clientY;
+
+            cursorDot.style.left = `${posX}px`;
+            cursorDot.style.top = `${posY}px`;
+
+             cursorOutline.animate({
+                left: `${posX}px`,
+                top: `${posY}px`
+             }, {duration: 500, fill: "forwards"})
+        })
+
+
         // const navItems = document.querySelector('.slide')
 
         // function onToggle(e) {

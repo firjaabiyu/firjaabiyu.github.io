@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="shortcut icon"  href="asset/prof.png" \type="image/x-icon">
+    <link rel="shortcut icon" href="asset/prof.png" \type="image/x-icon">
     <title>Portfolio by Firja</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -64,6 +64,37 @@
             font-style: normal;
         }
 
+        body {
+            cursor: none;
+        }
+
+        .cursor-dot {
+            width: 10px;
+            height: 10px;
+            background-color: black;
+            /* border: 2px solid black; */
+            /* mix-blend-mode: difference; */
+        }
+
+        .cursor-outline {
+            width: 30px;
+            height: 30px;
+            border: 2px solid transparent;
+            /* mix-blend-mode: difference; */
+        }
+
+        .cursor-dot,
+        .cursor-outline {
+            position: fixed;
+            top: 0;
+            left: 0;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+            z-index: 60;
+            pointer-events: none;
+            /* mix-blend-mode: difference; */
+        }
+
         .etc span {
             background: transparent;
             position: absolute;
@@ -106,25 +137,27 @@
 </head>
 
 <body class="scroll-auto">
+    <div class="cursor-dot" data-cursor-dot></div>
+    <div class="cursor-outline" data-cursor-outline></div>
     <div
         class="slide z-30 h-[50%] md:h-[50%] w-full md:p-16 p-5 flex flex-col min-h-fit top-[-100%] md:justify-center border-b-2 border-black justify-end items-end fixed bg-[#0466C8] duration-500 ease">
 
         <ul
             class="duration-200 flex md:flex-row flex-col gap-7 md:justify-between justify-start md:items-center ease-oute w-[100%]">
             <div class="kiri">
-                <li class="text-white md:text-[100px] text-[50px] etc"><a href="index.html">HOME<span>
+                <li class="text-white md:text-[100px] text-[50px] etc"><a class="cursor-none" href="index.html">HOME<span>
                             <ion-icon name="arrow-back-outline"></ion-icon>
                         </span></a></li>
-                <li class="text-white md:text-[100px] text-[50px] etc"><a href="project.html">PROJECT<span>
+                <li class="text-white md:text-[100px] text-[50px] etc"><a class="cursor-none" href="project.html">PROJECT<span>
                             <ion-icon name="arrow-back-outline"></ion-icon>
                         </span></a></li>
             </div>
             <div class="kanan font-semibold text-left md:text-right text-white text-[20px]">
-                <li class="hover:underline duration-300"><a href="https://www.instagram.com/document.biyu/"
+                <li class="hover:underline duration-300"><a class="cursor-none" href="https://www.instagram.com/document.biyu/"
                         target="_blank">Instagram</a></li>
-                <li class="hover:underline duration-300"><a href="https://www.linkedin.com/in/firjaabiyu/"
+                <li class="hover:underline duration-300"><a class="cursor-none" href="https://www.linkedin.com/in/firjaabiyu/"
                         target="_blank">Linkedin</a></li>
-                <li class="hover:underline duration-300"><a href="mailto:firjaabiyu@gmail.com">Email</a></li>
+                <li class="hover:underline duration-300"><a class="cursor-none" href="mailto:firjaabiyu@gmail.com">Email</a></li>
             </div>
 
         </ul>
@@ -134,7 +167,7 @@
         <div class="flex justify-center ">
             <nav class="flex z-50 justify-between mx-auto bg-transparent fixed items-center w-[92%]">
                 <div class="profile">
-                    <a href="index.html"><img id="profile" class="w-[50px]" class="cursor-pointer" src="asset/prof.png"
+                    <a class="cursor-none" href="index.html"><img id="profile" class="w-[50px]" class="cursor-pointer" src="asset/prof.png"
                             alt="firja"></a>
 
                 </div>
@@ -143,8 +176,8 @@
                         class="text-white border text-start border-black cursor-pointer font-[Jakarta Plus Sans] font-semibold bg-[#0466C8] text-[19px] rounded-full py-1 px-4">
                         Etc.
                     </p> -->
-                    <a href="#_" onclick="onToggle(this)"
-                        class="relative inline-flex items-center justify-center px-4 py-1 overflow-hidden text-white bg-[#0466C8] font-semibold font-[Jakarta Plus Sans] text-[19px] text-white transition duration-300 ease-out border border-black rounded-full group">
+                    <a c href="#_" onclick="onToggle(this)"
+                        class="relative cursor-none inline-flex items-center justify-center px-4 py-1 overflow-hidden text-white bg-[#0466C8] font-semibold font-[Jakarta Plus Sans] text-[19px] text-white transition duration-300 ease-out border border-black rounded-full group">
                         <!-- <span
                             class="absolute inset-0 flex items-center justify-center w-full h-full  duration-300 translate-y-full group-hover:translate-y-0 ease">
                             Etc.
@@ -226,14 +259,16 @@
         <div class="hidden md:block">
             <div class="w-full flex flex-row justify-center items-center pt-8">
                 <div class="flex flex-row justify-end items-center w-[90%]">
-                    <div data-tooltip-target="tooltip-left" data-tooltip-placement="left" class="text cursor-default flex justify-center items-center">
+                    <div data-tooltip-target="tooltip-left" data-tooltip-placement="left"
+                        class="text cursor-none flex justify-center items-center">
                         <div class="loader  right-1">
                         </div>
                         <p class="text-[#A1A1A1]">info...</p>
                     </div>
                     <div id="tooltip-left" role="tooltip"
                         class="absolute z-10 invisible inline-block px-3 py-2 text-md font-medium text-[#a1a1a1] bg-[#f2f2f2] border rounded-lg opacity-0 tooltip ">
-                        <span class="text-red-600">•</span> Soon, I will be available for exciting projects & internships!
+                        <span class="text-red-600">•</span> Soon, I will be available for exciting projects &
+                        internships!
                         <div class="tooltip-arrow" data-popper-arrow></div>
                     </div>
                 </div>
@@ -260,7 +295,7 @@
                             <div class="desk flex flex-row justify-start items-center">
                                 <span class="relative bottom-[px] left-[-10px] ">
                                     <a href="detail-vecke.html"
-                                        class="border border-[#A1A1A1] hover:border-none bg-transparent hover:bg-white text-[#A1A1A1] hover:text-black duration-300 ease-in-out rounded-[10000px] px-2 py-[14px]">
+                                        class="border cursor-none border-[#A1A1A1] hover:border-none bg-transparent hover:bg-white text-[#A1A1A1] hover:text-black duration-300 ease-in-out rounded-[10000px] px-2 py-[14px]">
                                         <ion-icon class=" arrow text-[30px] relative top-[10px] right-[4px] pt-3"
                                             name="arrow-forward-outline">
                                         </ion-icon>
@@ -295,7 +330,7 @@
                                     </div>
                                     <span class="relative bottom-[10px] md:bottom-[20px]">
                                         <a href="adidas.html" target="_blank"
-                                            class="border border-[#A1A1A1] hover:border-none bg-transparent hover:bg-white text-[#A1A1A1] hover:text-black duration-300 ease-in-out rounded-[10000px] px-2 py-[14px]">
+                                            class="border cursor-none border-[#A1A1A1] hover:border-none bg-transparent hover:bg-white text-[#A1A1A1] hover:text-black duration-300 ease-in-out rounded-[10000px] px-2 py-[14px]">
                                             <ion-icon class=" arrow text-[30px] relative top-[10px] right-[4px] pt-3"
                                                 name="arrow-forward-outline">
                                             </ion-icon>
@@ -321,7 +356,7 @@
                                     </div>
                                     <span class="relative bottom-[10px] md:bottom-[20px]">
                                         <a href="mclaren.html" target="_blank"
-                                            class="border border-[#A1A1A1] hover:border-none bg-transparent hover:bg-white text-[#A1A1A1] hover:text-black duration-300 ease-in-out rounded-[10000px] px-2 py-[14px]">
+                                            class="border cursor-none border-[#A1A1A1] hover:border-none bg-transparent hover:bg-white text-[#A1A1A1] hover:text-black duration-300 ease-in-out rounded-[10000px] px-2 py-[14px]">
                                             <ion-icon class=" arrow text-[30px] relative top-[10px] right-[4px] pt-3"
                                                 name="arrow-forward-outline">
                                             </ion-icon>
@@ -347,7 +382,7 @@
                                     </div>
                                     <span class="relative bottom-[10px] md:bottom-[20px]">
                                         <a href="Artikel.html" target="_blank"
-                                            class="border border-[#A1A1A1] hover:border-none bg-transparent hover:bg-white text-[#A1A1A1] hover:text-black duration-300 ease-in-out rounded-[10000px] px-2 py-[14px]">
+                                            class="border cursor-none border-[#A1A1A1] hover:border-none bg-transparent hover:bg-white text-[#A1A1A1] hover:text-black duration-300 ease-in-out rounded-[10000px] px-2 py-[14px]">
                                             <ion-icon class=" arrow text-[30px] relative top-[10px] right-[4px] pt-3"
                                                 name="arrow-forward-outline">
                                             </ion-icon>
@@ -371,7 +406,7 @@
                                     </div>
                                     <span class="relative bottom-[10px] md:bottom-[20px]">
                                         <a href="ocean.html" target="_blank"
-                                            class="border border-[#A1A1A1] hover:border-none bg-transparent hover:bg-white text-[#A1A1A1] hover:text-black duration-300 ease-in-out rounded-[10000px] px-2 py-[14px]">
+                                            class="border cursor-none border-[#A1A1A1] hover:border-none bg-transparent hover:bg-white text-[#A1A1A1] hover:text-black duration-300 ease-in-out rounded-[10000px] px-2 py-[14px]">
                                             <ion-icon class=" arrow text-[30px] relative top-[10px] right-[4px] pt-3"
                                                 name="arrow-forward-outline">
                                             </ion-icon>
@@ -395,7 +430,7 @@
                                     </div>
                                     <span class="relative bottom-[10px] md:bottom-[20px]">
                                         <a href="quran.html" target="_blank"
-                                            class="border border-[#A1A1A1] hover:border-none bg-transparent hover:bg-white text-[#A1A1A1] hover:text-black duration-300 ease-in-out rounded-[10000px] px-2 py-[14px]">
+                                            class="border cursor-none border-[#A1A1A1] hover:border-none bg-transparent hover:bg-white text-[#A1A1A1] hover:text-black duration-300 ease-in-out rounded-[10000px] px-2 py-[14px]">
                                             <ion-icon class=" arrow text-[30px] relative top-[10px] right-[4px] pt-3"
                                                 name="arrow-forward-outline">
                                             </ion-icon>
@@ -405,13 +440,14 @@
                             </div>
                             <div class="md:pb-0 pb-10">
                                 <div
-                                class=" bg-[#ffffff] border-dashed border-2 flex flex-col justify-center items-center overflow-hidden py-5 md:h-[100px] px-3 rounded-[30px]">
-                                <div class="desk flex flex-row justify-center w-[96%] items-center">
-                                    <div class="text ">
-                                        <p class="text-[20px] text-[#A1A1A1] md:text-[20px] font-normal">A new update is coming soon…</p>
+                                    class=" bg-[#ffffff] border-dashed border-2 flex flex-col justify-center items-center overflow-hidden py-5 md:h-[100px] px-3 rounded-[30px]">
+                                    <div class="desk flex flex-row justify-center w-[96%] items-center">
+                                        <div class="text ">
+                                            <p class="text-[20px] text-[#A1A1A1] md:text-[20px] font-normal">A new
+                                                update is coming soon…</p>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
                             </div>
                         </div>
                     </div>
@@ -432,6 +468,26 @@
 
 
     <script>
+        const cursorDot = document.querySelector("[data-cursor-dot]");
+        const cursorOutline = document.querySelector("[data-cursor-outline]");
+
+        window.addEventListener("mousemove", function (ja) {
+            const posX = ja.clientX;
+            const posY = ja.clientY;
+
+            cursorDot.style.left = `${posX}px`;
+            cursorDot.style.top = `${posY}px`;
+
+            cursorOutline.animate({
+                left: `${posX}px`,
+                top: `${posY}px`
+            }, {
+                duration: 500,
+                fill: "forwards"
+            })
+        })
+
+
         // const navItems = document.querySelector('.slide')
 
         // function onToggle(e) {

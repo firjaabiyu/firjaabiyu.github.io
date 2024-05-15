@@ -48,6 +48,36 @@
 
 
 
+        body {
+            cursor: none;
+        }
+
+        .cursor-dot {
+            width: 10px;
+            height: 10px;
+            background-color: black;
+            /* border: 2px solid black; */
+            /* mix-blend-mode: difference; */
+        }
+
+        .cursor-outline {
+            width: 30px;
+            height: 30px;
+            border: 2px solid transparent;
+            /* mix-blend-mode: difference; */
+        }
+
+        .cursor-dot,
+        .cursor-outline {
+            position: fixed;
+            top: 0;
+            left: 0;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+            z-index: 60;
+            pointer-events: none;
+            /* mix-blend-mode: difference; */
+        }
 
         .firja {
             letter-spacing: 0.4px;
@@ -96,12 +126,14 @@
 </head>
 
 <body class="scroll-auto">
+    <div class="cursor-dot" data-cursor-dot></div>
+    <div class="cursor-outline" data-cursor-outline></div>
     <section class="w-full pt-8 " id="isi">
         <!-- nav -->
         <div class="flex justify-center pb-7 ">
             <nav class="flex z-50 justify-between mx-auto bg-transparent  items-center w-[86%] md:w-[72%]">
                 <div class="profile flex justify-center items-center gap-2">
-                    <a href="project.html"><img id="" class="md:w-[50px] w-[40px] hover:opacity-50" class="cursor-pointer"
+                    <a href="#"><img id="" class="md:w-[50px] w-[40px] cursor-none hover:opacity-50" 
                             src="asset/vecke-icn.png" alt="vecke"></a>
 
 
@@ -111,7 +143,7 @@
                     </div>
                 </div>
                 <div class="menu">
-                    <a href="project.html" class="text-[#a1a1a1] hover:text-black text-[30px]">
+                    <a href="project.html" class="text-[#a1a1a1] cursor-none hover:text-black text-[30px]">
                         <ion-icon class="md:hidden block" name="caret-forward-outline"></ion-icon>
                         <ion-icon class="md:block hidden" name="albums"></ion-icon>
                         <!-- <p class="md:hidden block">X</p> -->
@@ -172,7 +204,21 @@
 
 
     <script>
+        const cursorDot = document.querySelector("[data-cursor-dot]");
+        const cursorOutline = document.querySelector("[data-cursor-outline]");
 
+        window.addEventListener("mousemove", function(ja) {
+            const posX = ja.clientX;
+            const posY = ja.clientY;
+
+            cursorDot.style.left = `${posX}px`;
+            cursorDot.style.top = `${posY}px`;
+
+             cursorOutline.animate({
+                left: `${posX}px`,
+                top: `${posY}px`
+             }, {duration: 500, fill: "forwards"})
+        })
     </script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
