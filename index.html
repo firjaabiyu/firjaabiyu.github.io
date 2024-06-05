@@ -117,6 +117,19 @@
             clip-path: inset(0% 0% 5% 0%);
             /* Jarak 10% dari semua sisi */
         }
+
+        .mutar{
+            transform: rotate(180deg);
+            animation: rotate 5s linear infinite;
+        }
+        @keyframes rotate{
+            0%{
+                transform: rotate(0deg);
+            }
+            100%{
+                transform: rotate(360deg);
+            }
+        }
     </style>
 
 </head>
@@ -319,7 +332,7 @@
                         <p
                             class="text-white bg-black hover:bg-[#0466C8] border border-black rounded-full py-1 px-4   md:text-[20px] font-[Jakarta Plus Sans] font-semibold">
                             <a href="https://bento.me/firja" class="" target="_blank">Contact Me</a></p>
-                        <img id="profile" class="w-[50px] md:block hidden " src="asset/prof.png"
+                        <img id="profile" class="w-[50px] md:block hidden  " src="asset/prof-bawah.png"
                             alt="firja">
                     </div>
                 </ul>

@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- package -->
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js">
+    </script>
+
+    <!-- item -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <style>
+        body {
+            overflow-x: hidden;
+        }
+
+        .nav-line {
+            box-shadow: 0px 0px 0px 1px #999999;
+        }
+
+        .sign-icn {
+            color: #3C31F0;
+        }
+
+        .logospon-emi {
+            margin-right: 20px;
+        }
+
+        .logospon-adi {
+            margin-right: 30px;
+        }
+
+        .nav-pad {
+            margin-right: 15px;
+            transition: 0.5s;
+        }
+
+        .nav-pad-drop {
+            margin-right: 0px;
+            transition: 0.5s;
+        }
+
+        .nav-pad-drop :hover {
+            color: #3C31F0;
+        }
+
+        .nav-pad :hover {
+            color: #3C31F0;
+        }
+
+        .nav-bld {
+            font-weight: 600;
+        }
+
+        .real {
+            margin: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .img-real {
+            border-radius: 20px;
+        }
+
+        .resp {
+            display: none;
+        }
+
+        .columlum {
+            width: 89%;
+            margin: 10px;
+        }
+
+        .colum-lum {
+            display: flex;
+            justify-content: center;
+        }
+
+        .card-cstm {
+            border: none;
+            cursor: pointer;
+
+        }
+
+        .card-cstm:hover {
+            scale: 0.9;
+            transition: all 0.1s ease;
+        }
+
+        .kartu-cstm {
+            border-radius: 13px;
+        }
+
+        .col-pad {
+            margin-top: 20px;
+        }
+
+
+        @media screen and (max-width: 600px) {
+            .web {
+                display: none;
+            }
+
+            .resp {
+                display: block;
+                margin-top: -13%;
+            }
+
+            .colum-lum {
+                width: 300vw;
+                display: flex;
+                justify-content: start;
+                align-items: start;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- nav start -->
+    <nav class="navbar navbar-expand-lg bg-transparent nav-line">
+        <div class="container-xxl">
+
+            <a class="navbar-brand " href="#">
+                <img src="https://upload.wikimedia.org/wikipedia/en/thumb/5/56/Real_Madrid_CF.svg/1200px-Real_Madrid_CF.svg.png"
+                    style="width: 30px;" alt="">
+                <img src="garis.png" style="width: 7px;" alt="">
+                <img src="https://publish-p47754-e237306.adobeaemcloud.com/adobe/dynamicmedia/deliver/dm-aid--e05c6091-9f39-4b04-8af2-d5cb7e37dbfa/champions.app.png?preferwebp=true"
+                    style="width: 40px;" alt="">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mx-auto me-auto mb-0 mb-lg-0">
+                    <li class="nav-item nav-pad">
+                        <a class="nav-link nav-bld" aria-current="page" href="#">Madridistas</a>
+                    </li>
+                    <li class="nav-item nav-pad">
+                        <a class="nav-link nav-bld" href="#">Tickets</a>
+                    </li>
+                    <li class="nav-item dropdown nav-pad-drop">
+                        <a class="nav-link dropdown-toggle nav-bld" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Shop
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Men</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Women</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Kids</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <div class="logospon-emi">
+                    <img src="https://publish-p47754-e237306.adobeaemcloud.com/content/dam/common/statics/public-content/sponsor/football/emirates_gray.app.svg?$Mobile$&wid=57"
+                        style="width: 50px;" alt="">
+                </div>
+                <div class="logospon-adi">
+                    <img src="https://publish-p47754-e237306.adobeaemcloud.com/content/dam/common/statics/public-content/sponsor/football/adidas_gray.app.svg?$Mobile$&wid=57"
+                        style="width: 50px;" alt="">
+                </div>
+                <form class="d-flex" role="search">
+                    <button class="btn btn-outline-primary" type="submit"> <i class="bi-person"></i> Sign In</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+    <!-- nav end -->
+    <!-- hero start -->
+    <div class="card text-bg-transparent border-0 real">
+        <img src="company/hero.png" style="width: 1500px;" class="web img-real" alt="madrid">
+        <img src="company/hero-resp.png" style="width: 400px;" class="card-img resp" alt="madrid">
+    </div>
+    <!-- hero end -->
+
+    <!-- col -->
+    <div class="colum-lum">
+        <div class="row row-cols-4 row-cols-md-4 columlum">
+            <div class="col col-pad">
+                <div class="card h-100 card-cstm">
+                    <img src="https://publish-p47754-e237306.adobeaemcloud.com/adobe/dynamicmedia/deliver/dm-aid--7095efde-e3db-479f-813b-113e4defd353/ND_SUPERCOPA_ESPA_A_RM_ATLETICO_ALEGRIA_GRUPO_AV11116.app.png?preferwebp=true&width=350"
+                        class="card-img-top kartu-cstm" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Real Madrid in the Spanish Super Cup Final</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col col-pad">
+                <div class="card h-100 card-cstm">
+                    <img src="https://publish-p47754-e237306.adobeaemcloud.com/adobe/dynamicmedia/deliver/dm-aid--07673af6-cba4-4c28-a511-e873eb6c7519/ND_SUPERCOPA_ESPA_A_RM_ATLETICO_ALEGRIA_GRUPO_AV30014.app.png?preferwebp=true&width=350"
+                        class="card-img-top kartu-cstm" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Madrid reach Spanish Super Cup final after epic semi win</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col col-pad">
+                <div class="card h-100 card-cstm">
+                    <img src="https://publish-p47754-e237306.adobeaemcloud.com/adobe/dynamicmedia/deliver/dm-aid--ebe65600-cfa7-4ce0-9f28-b0ec9b9ba4fa/ND_EUROLIGA_J21_RM_VALENCIA_BASKET_HOMENAJE_LLULL_1PC8559.app.png?preferwebp=true&width=350"
+                        class="card-img-top kartu-cstm" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">The WiZink Center pays tribute to Llull</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col col-pad">
+                <div class="card h-100 card-cstm">
+                    <img src="https://publish-p47754-e237306.adobeaemcloud.com/adobe/dynamicmedia/deliver/dm-aid--d790bfa9-9e6a-4811-b122-5dc5ffde15bc/ND_ENTRENAMIENTO_02_AV34539.app.png?preferwebp=true&width=350"
+                        class="card-img-top kartu-cstm" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Real Madrid gear up for Spanish Super Cup final</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col col-pad">
+                <div class="card h-100 card-cstm">
+                    <img src="https://publish-p47754-e237306.adobeaemcloud.com/adobe/dynamicmedia/deliver/dm-aid--271892cc-02a3-4692-91c2-e6a154e658d9/_330758913356.app.png?preferwebp=true&width=350"
+                        class="card-img-top kartu-cstm" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">We won our 11th Spanish Super Cup four years ago</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col col-pad">
+                <div class="card h-100 card-cstm">
+                    <img src="https://publish-p47754-e237306.adobeaemcloud.com/adobe/dynamicmedia/deliver/dm-aid--99d50518-4246-400b-a526-1d015f800ef8/ND_SUPERCOPA_ESPA_A_RM_ATLETICO_ALEGRIA_RUDIGER_BELLINGHAM_HE00302.app.png?preferwebp=true&width=350"
+                        class="card-img-top kartu-cstm" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Real Madrid-Atlético LaLiga match to be played on Sunday, 4 February, at
+                            9pm</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col col-pad">
+                <div class="card h-100 card-cstm">
+                    <img src="https://publish-p47754-e237306.adobeaemcloud.com/adobe/dynamicmedia/deliver/dm-aid--dd6fe8bd-f790-411c-b39d-c0a6b34ac1c3/ND_ENTREVISTA_BRAHIM_AV31048.app.png?preferwebp=true&width=350"
+                        class="card-img-top kartu-cstm" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Brahim: “I'm in great form at the moment and I know I can still give a
+                            lot more”</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col col-pad">
+                <div class="card h-100 card-cstm">
+                    <img src="https://publish-p47754-e237306.adobeaemcloud.com/adobe/dynamicmedia/deliver/dm-aid--9557bccf-f70a-4da5-bd5e-69e0243442cb/ND_EUROLIGA_J21_RM_VALENCIA_BASKET_CHUS_MATEO_1PC0024.app.png?preferwebp=true&width=350"
+                        class="card-img-top kartu-cstm" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Chus Mateo: "We won thanks to our tenacity and perseverance"</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- col end -->
+    <!-- Footer -->
+    <footer class="text-center text-lg-start bg-body-tertiary text-muted">
+        <!-- Section: Social media -->
+        <section class="d-flex justify-content-center justify-content-lg-between p-1 border-top">
+            <!-- Left -->
+            <!-- Left -->
+
+            
+            <!-- Right -->
+        </section>
+        <!-- Section: Social media -->
+
+        <!-- Section: Links  -->
+        <section class="">
+            <div class="container text-center text-md-start mt-5">
+                <!-- Grid row -->
+                <div class="row mt-3">
+                    <!-- Grid column -->
+                    <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                        <!-- Content -->
+                        <h6 class="text-uppercase fw-bold mb-4">
+                            <i class="fas fa-gem "></i>Real Madrid CF
+                        </h6>
+                        <p>
+                            The Best Club In The World Who Has 15 Champions League Title, But We Still Try To Get Our First Treble Winner😀.
+                        </p>
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                        <!-- Links -->
+                        <h6 class="text-uppercase fw-bold mb-4">
+                            Products
+                        </h6>
+                        <p>
+                            <a href="#!" class="text-reset">Angular</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset">React</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset">Vue</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset">Laravel</a>
+                        </p>
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                        <!-- Links -->
+                        <h6 class="text-uppercase fw-bold mb-4">
+                            Useful links
+                        </h6>
+                        <p>
+                            <a href="#!" class="text-reset">Pricing</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset">Settings</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset">Orders</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset">Help</a>
+                        </p>
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                        <!-- Links -->
+                        <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+                        <p><i class="fas fa-home me-3"></i> Madrid, NY 10012, SPAIN</p>
+                        <p>
+                            <i class="fas fa-envelope me-3"></i>
+                            realreal@gmail.com
+                        </p>
+                        <p><i class="fas fa-phone me-3"></i> + 01 234 567 88</p>
+                        <p><i class="fas fa-print me-3"></i> + 01 234 567 89</p>
+                    </div>
+                    <!-- Grid column -->
+                </div>
+                <!-- Grid row -->
+            </div>
+        </section>
+        <!-- Section: Links  -->
+
+        <!-- Copyright -->
+        <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+            © 2024 Copyright:
+            <a class="text-reset fw-bold" href="https://www.realmadrid.com/en-US">RealMadrid.com</a>
+        </div>
+        <!-- Copyright -->
+    </footer>
+    <!-- Footer -->
+</body>
+
+</html>
