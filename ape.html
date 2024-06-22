@@ -1,0 +1,1511 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ape Collections</title>
+    <link rel="shortcut icon" href="ape/ape-logo.png" \type="image/x-icon">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
+        rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        html {
+            overflow-x: hidden;
+
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #0D0D0D;
+        }
+
+        .ape-star {
+            transform: rotate(180deg);
+            animation: rotate 2s infinite linear;
+        }
+
+        @keyframes rotate {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+
+        .arrow-bottom {
+            animation: bawah 1s infinite ease;
+        }
+
+        @keyframes bawah {
+            0% {
+                transform: translateY(0%);
+            }
+
+            30% {
+                transform: translateY(20%);
+            }
+        }
+
+        .text-top,
+        .text-bottom {
+            transition: transform 0.2s ease-out;
+        }
+
+        .grayscale-nft {
+            filter: grayscale(0%);
+            transition: filter 0.3s ease;
+        }
+
+        .colored-nft {
+            filter: grayscale(100%);
+            transition: filter 0.3s ease;
+        }
+
+        .item {
+            display: none;
+        }
+
+        .item .default {
+            display: block;
+        }
+
+        .area-button span.active ion-icon {
+            color: black;
+            /* Change text color when active */
+        }
+
+        .card:hover img {
+            scale: 1.1;
+        }
+
+        .gambar-partner p {
+            opacity: 0;
+            transition: 0.3s;
+        }
+
+        .gambar-partner:hover p {
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="w-full pt-6">
+        <!-- navbar -->
+        <div class="nav flex justify-center items-center pt-4">
+            <div class="area-nav  w-[90%]   flex justify-between items-center">
+                <div class="items  text-[18px] flex justify-center items-center gap-5 uppercase font-semibold">
+                    <a href="#" class="hover:text-white text-[#CFCFCF]">PROJECT</a>
+                    <a href="#" class="hover:text-white text-[#CFCFCF]">ROADMAP</a>
+                    <a href="#" class="hover:text-white text-[#CFCFCF]">TEAM</a>
+                    <a href="#" class="hover:text-white text-[#CFCFCF]">ABOUT</a>
+                </div>
+                <div class="title text-white font-extrabold text-[24px] cursor-pointer">
+                    <p>APE.COLLECTIONS</p>
+                </div>
+            </div>
+        </div>
+        <!-- hero -->
+        <div class="hero flex justify-center items-center pt-20">
+            <div class="area-hero w-[90%] flex flex-col justify-center items-center py-7">
+                <div class="text w-full text-[95pt] flex flex-col justify-start items-start">
+                    <div class="top text-[#CFCFCF] font-medium">
+                        <p>COLLECT YOUR</p>
+                    </div>
+                    <div class="middle flex justify-center items-center gap-5 text-white font-bold">
+                        <p>SUPER RARE</p>
+                        <span>
+                            <div class="logo bg-[#FF7725] px-7 rounded-[99px] py-2">
+                                <svg class="ape-star" width="64" height="64" viewBox="0 0 64 64" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M32 0C32.6954 0.000143364 33.3718 0.226761 33.9268 0.645562C34.4819 1.06436 34.8855 1.65256 35.0765 2.32115L38.5455 14.4645C39.2925 17.0797 40.6937 19.4614 42.617 21.3846C44.5402 23.3077 46.922 24.7089 49.5373 25.4558L61.6811 28.9248C62.3493 29.1162 62.937 29.5199 63.3553 30.0749C63.7737 30.63 64 31.3061 64 32.0012C64 32.6962 63.7737 33.3723 63.3553 33.9274C62.937 34.4824 62.3493 34.8861 61.6811 35.0775L49.5373 38.5465C46.922 39.2934 44.5402 40.6946 42.617 42.6177C40.6937 44.5409 39.2925 46.9226 38.5455 49.5378L35.0765 61.6812C34.8851 62.3493 34.4813 62.937 33.9263 63.3554C33.3712 63.7737 32.6951 64 32 64C31.3049 64 30.6288 63.7737 30.0737 63.3554C29.5187 62.937 29.1149 62.3493 28.9235 61.6812L25.4545 49.5378C24.7075 46.9226 23.3063 44.5409 21.383 42.6177C19.4598 40.6946 17.078 39.2934 14.4627 38.5465L2.31893 35.0775C1.65074 34.8861 1.06304 34.4824 0.644664 33.9274C0.226292 33.3723 0 32.6962 0 32.0012C0 31.3061 0.226292 30.63 0.644664 30.0749C1.06304 29.5199 1.65074 29.1162 2.31893 28.9248L14.4627 25.4558C17.078 24.7089 19.4598 23.3077 21.383 21.3846C23.3063 19.4614 24.7075 17.0797 25.4545 14.4645L28.9235 2.32115C29.1145 1.65256 29.5181 1.06436 30.0732 0.645562C30.6282 0.226761 31.3046 0.000143364 32 0Z"
+                                        fill="white" />
+                                </svg>
+
+                            </div>
+                        </span>
+                        <p>NFT</p>
+                    </div>
+                    <div class="bottom  flex justify-center gap-5 font-medium items-center text-[#CFCFCF]">
+                        <div class="img-nft flex">
+                            <img src="ape/image 5.png" class="grayscale hover:grayscale-0" width="150px" alt="">
+                            <img src="ape/image 6.png" class="grayscale hover:grayscale-0" width="150px" alt="">
+                            <img src="ape/image 7.png" class="grayscale hover:grayscale-0" width="150px" alt="">
+                            <img src="ape/image 8.png" class="grayscale hover:grayscale-0" width="150px" alt="">
+                        </div>
+                        <p>COLLECTIONS</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- more -->
+        <div class="desc w-full flex justify-center items-center pt-32">
+            <div class="area-desc w-[90%] flex justify-between items-center uppercase">
+                <div class="left w-[50%] text-white font-semibold text-[24px]">
+                    <p>Unique, fully 3D and built to unite the ape multiverse.
+                        Designed and styled by Digimental.</p>
+                </div>
+                <div
+                    class="right gap-3 flex justify-center items-start cursor-default font-normal text-[24px] text-white border-2 px-20 py-4 border-white rounded-[99px]">
+                    <span class="arrow-bottom">
+                        <p>
+                            <svg width="22" height="26" viewBox="0 0 22 26" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M21 15L11 25M11 25L1 15M11 25V1" stroke="white" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </p>
+
+
+                    </span>
+                    <p>DISCOVER</p>
+                </div>
+            </div>
+        </div>
+        <!-- big nft -->
+        <div class="big-nft relative flex flex-col overflow-hidden justify-center items-center w-full h-[103vh] pt-44">
+            <div class="area-big-nft flex flex-col justify-center items-center">
+                <div class="row-up text-[128px] whitespace-nowrap overflow-hidden font-extrabold text-white">
+                    <p class="text-top">STREET FASHION. YOUR STYLE STREET FASHION. YOUR STYLE</p>
+                    <!-- <p class="text-bottom">STREET FASHION. YOUR STYLE STREET FASHION. YOUR STYLE</p> -->
+                    <p class="text-bottom">RUN THE HAPES WALK RUN THE HAPES WALK RUN THE HAPES WALK RUN THE HAPES WALK
+                    </p>
+                </div>
+            </div>
+            <div class="area w-[90%]">
+                <div class="text-area w-full flex  justify-start items-center pt-32">
+                    <div class="text-01 w-[26%]  text-left flex-col justify-start items-center">
+                        <p class="text-[26px] text-white font-extrabold">01/</p>
+                        <p class="font-medium text-[18px] text-[#CFCFCF]">
+                            Switch up your HAPE's clothing with digital drops, rank up on the Fashion Index and build
+                            your look for the metaverse.
+                        </p>
+                    </div>
+                </div>
+                <div class="text-area w-full flex  justify-end items-center">
+                    <div class="text-02 w-[26%]  text-right flex-col justify-end items-center">
+                        <p class="text-[26px] text-white font-extrabold">02/</p>
+                        <p class="font-medium text-[18px] text-[#D1D1D1]">
+                            Take to the runway and show off your collection. Become a HAPEFLUENCER and reap the
+                            real-world rewards.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="images w-[89%] absolute top-44  flex justify-center items-center">
+                    <img id="nft-big" src="ape/big-nft.png" class="grayscale-nft" width="798px" alt="">
+                </div>
+
+                <div class="switch w-full flex justify-center items-center">
+                    <div class="text w-[90%]  flex justify-center items-end z-10">
+                        <div id="switch"
+                            class="text-main cursor-pointer px-5 py-5 text-[20px] border-white border rounded-[99px] text-white font-bold bg-[#0D0D0D]">
+                            <a></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- collection -->
+        <div class="w-full  flex justify-center items-center bg-white ">
+            <div class="w-[90%] flex flex-col justify-center items-center pt-14">
+                <div class="title-collection w-full flex justify-between items-center">
+                    <p class="font-extrabold text-[74px]">COLLECTIONS.</p>
+                    <a target="_blank" href="https://opensea.io/collection/hapeprime">
+                        <div
+                            class="opensea flex justify-center px-5 rounded-[24px] py-4 items-center gap-4 bg-[#F7F7F7] border hover:border-[#00B2FF] duration-200 font-extrabold text-[20px]">
+                            <p>VIEW ON OPENSEA</p>
+                            <span>
+                                <svg width="40" height="41" viewBox="0 0 40 41" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M20 0.5C8.95667 0.5 0 9.45667 0 20.5C0 31.5433 8.95667 40.5 20 40.5C31.0433 40.5 40 31.5433 40 20.5C40 9.45667 31.0483 0.5 20 0.5ZM9.86667 21.1717L9.95167 21.0367L15.1567 12.8967C15.1741 12.8699 15.1984 12.8483 15.227 12.8342C15.2556 12.82 15.2876 12.8138 15.3194 12.8162C15.3512 12.8186 15.3819 12.8295 15.4081 12.8477C15.4343 12.866 15.4551 12.8909 15.4683 12.92C16.335 14.8683 17.0883 17.2917 16.735 18.8C16.5883 19.42 16.1767 20.26 15.7117 21.0367C15.652 21.1503 15.5869 21.261 15.5167 21.3683C15.4998 21.3923 15.4773 21.4117 15.4511 21.4248C15.4249 21.4379 15.3959 21.4442 15.3667 21.4433H10.0217C9.98976 21.4438 9.95832 21.4357 9.93068 21.4197C9.90304 21.4038 9.88023 21.3807 9.86468 21.3528C9.84913 21.3249 9.84141 21.2934 9.84235 21.2615C9.84328 21.2296 9.85284 21.1986 9.87 21.1717H9.86667ZM33.0567 23.9717C33.0571 24.0073 33.047 24.0422 33.0278 24.0721C33.0085 24.102 32.9809 24.1256 32.9483 24.14C32.5433 24.3117 31.165 24.9483 30.5917 25.7433C29.1283 27.78 28.0117 30.6933 25.5117 30.6933H15.0883C14.2083 30.692 13.3371 30.5173 12.5246 30.1792C11.7121 29.841 10.9742 29.3461 10.3531 28.7226C9.73192 28.0991 9.23973 27.3594 8.90461 26.5456C8.5695 25.7319 8.39803 24.8601 8.4 23.98V23.86C8.4 23.7633 8.48 23.6833 8.58 23.6833H14.3883C14.505 23.6833 14.5883 23.7883 14.58 23.9033C14.5367 24.28 14.6083 24.6683 14.7883 25.02C15.1317 25.72 15.8483 26.1567 16.62 26.1567H19.4967V23.9117H16.65C16.6166 23.9113 16.584 23.9019 16.5556 23.8843C16.5272 23.8668 16.5042 23.8419 16.4889 23.8122C16.4737 23.7825 16.4668 23.7493 16.469 23.716C16.4713 23.6827 16.4826 23.6507 16.5017 23.6233L16.6067 23.4733C16.8733 23.0883 17.2583 22.4967 17.6417 21.82C17.9017 21.3633 18.155 20.8767 18.3583 20.3867C18.3983 20.3 18.43 20.2083 18.4667 20.12C18.5217 19.9633 18.5783 19.8167 18.6183 19.6717C18.6576 19.5487 18.6937 19.4248 18.7267 19.3C18.8217 18.8833 18.8617 18.4433 18.8617 17.9883C18.8617 17.8083 18.855 17.62 18.8383 17.4433C18.83 17.2483 18.805 17.0517 18.7817 16.8567C18.763 16.6822 18.7363 16.5087 18.7017 16.3367C18.6568 16.0747 18.6023 15.8146 18.5383 15.5567L18.515 15.4567C18.465 15.2767 18.4217 15.1067 18.365 14.9283C18.2063 14.3807 18.0239 13.8402 17.8183 13.3083C17.7467 13.1083 17.6678 12.9109 17.5817 12.7167C17.4617 12.42 17.3383 12.1517 17.2267 11.9C17.1711 11.7922 17.1189 11.6827 17.07 11.5717C17.0158 11.4519 16.9586 11.3335 16.8983 11.2167C16.8583 11.1283 16.81 11.0433 16.7783 10.9633L16.4267 10.3167C16.3783 10.2283 16.4583 10.12 16.555 10.1483L18.755 10.7433H18.7717L19.06 10.8267L19.38 10.9167L19.4967 10.9483V9.64333C19.4967 9.01167 20 8.5 20.6283 8.5C20.7767 8.4996 20.9236 8.52922 21.0602 8.58708C21.1969 8.64494 21.3204 8.72983 21.4233 8.83667C21.6361 9.0513 21.7559 9.34109 21.7567 9.64333V11.5833L21.9917 11.6483C22.0083 11.6567 22.0283 11.665 22.0433 11.6767C22.1 11.7167 22.1833 11.78 22.2883 11.86C22.3717 11.9233 22.46 12.0033 22.5633 12.0883C22.8924 12.3565 23.2116 12.6367 23.52 12.9283C23.8767 13.26 24.2767 13.6483 24.66 14.08C24.7683 14.2033 24.8717 14.3233 24.98 14.4567C25.0833 14.5883 25.2 14.7167 25.2967 14.8433C25.4283 15.0167 25.5633 15.1967 25.6883 15.3833C25.7433 15.4717 25.8117 15.5633 25.8633 15.6517C26.0233 15.8883 26.16 16.1317 26.2917 16.3767C26.3483 16.4883 26.4033 16.6117 26.4517 16.7317C26.6 17.06 26.7167 17.3917 26.7883 17.7283C26.812 17.7998 26.8282 17.8735 26.8367 17.9483V17.965C26.86 18.06 26.8683 18.165 26.8767 18.2717C26.9236 18.7643 26.8633 19.2612 26.7 19.7283C26.6483 19.8683 26.6 20.0117 26.5367 20.1517C26.4117 20.435 26.2683 20.7233 26.0967 20.9883C26.04 21.0883 25.9717 21.1917 25.9083 21.2917C25.8367 21.3967 25.76 21.4967 25.6967 21.5917C25.605 21.7179 25.5088 21.8407 25.4083 21.96C25.32 22.08 25.2317 22.2 25.1317 22.3083C24.9967 22.4717 24.865 22.625 24.7233 22.7717C24.6433 22.8683 24.5567 22.9683 24.4633 23.055C24.3767 23.155 24.2833 23.2433 24.2033 23.3233C24.0633 23.4633 23.9533 23.5683 23.8567 23.66L23.6283 23.8633C23.5965 23.8952 23.5534 23.9132 23.5083 23.9133H21.7567V26.1567H23.96C24.4517 26.1567 24.92 25.9833 25.3 25.66C25.4283 25.5483 25.9917 25.06 26.66 24.3233C26.6818 24.2983 26.711 24.2807 26.7433 24.2733L32.8267 22.5117C32.8534 22.5039 32.8815 22.5025 32.9089 22.5075C32.9362 22.5125 32.9621 22.5237 32.9843 22.5403C33.0066 22.557 33.0247 22.5785 33.0373 22.6033C33.0498 22.6281 33.0565 22.6555 33.0567 22.6833V23.9717Z"
+                                        fill="#00B3FF" />
+                                </svg>
+                            </span>
+                        </div>
+                    </a>
+                </div>
+                <div class="search-bar w-full flex gap-5 justify-between items-center pt-10 py-5">
+                    <div class="row-left-search w-[80%]">
+                        <form class="relative">
+                            <div class="absolute inset-y-0 start-0 flex items-center ps-4 pointer-events-none">
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M19 19L13.803 13.803M13.803 13.803C15.2096 12.3964 15.9998 10.4887 15.9998 8.49949C15.9998 6.51029 15.2096 4.60256 13.803 3.19599C12.3964 1.78941 10.4887 0.999207 8.49949 0.999207C6.51029 0.999207 4.60256 1.78941 3.19599 3.19599C1.78941 4.60256 0.999207 6.51029 0.999207 8.49949C0.999207 10.4887 1.78941 12.3964 3.19599 13.803C4.60256 15.2096 6.51029 15.9998 8.49949 15.9998C10.4887 15.9998 12.3964 15.2096 13.803 13.803Z"
+                                        stroke="#A1A1A1" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
+                            </div>
+                            <input type="text" id=""
+                                class="block w-full p-4 px-12 text-[18px] text-[#A1A1A1] border-2 border-[#F1F1F1] rounded-[16px] "
+                                placeholder="Explore 8.192 Uniqes Ape...." />
+                        </form>
+                    </div>
+                    <div class="row-right w-[20%]">
+                        <div
+                            class="area-button bg-[#F9F9F9] gap-3 flex justify-between px-6 py-[6px] items-center border-2 border-[#F1F1F1] rounded-[14px]">
+                            <span id="button1" onclick="displayContent('item1', 'button1')"
+                                class="01 cursor-pointer text-[30px] text-[#BBBBBB] hover:text-black ">
+                                <ion-icon name="list"></ion-icon>
+                            </span>
+                            <span id="button2" onclick="displayContent('item2', 'button2')"
+                                class="02 cursor-pointer text-[30px] text-[#BBBBBB] hover:text-black">
+                                <ion-icon name="apps"></ion-icon>
+                            </span>
+                            <span id="button3" onclick="displayContent('item3', 'button3')"
+                                class="03  px-2 rounded-[14px] cursor-pointer text-[30px] text-[#BBBBBB] hover:text-black">
+                                <ion-icon name="grid"></ion-icon>
+                            </span>
+                            <span id="button4" onclick="displayContent('item4', 'button4')"
+                                class="04 cursor-pointer text-[31px] text-[#BBBBBB] hover:text-black">
+                                <ion-icon name="square"></ion-icon>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="content flex justify-center items-center w-full pt-2 py-7">
+                    <div class="area-content w-full flex justify-center items-center">
+                        <div class="item w-full flex justify-center items-center" id="item1">
+                            <div class="area grid md:grid-cols-2 grid-cols-1 items-center gap-5">
+                                <div
+                                    class="card1 w-full hover:bg-[#f1f0f0]  px-5 py-4 rounded-[20px] border-2 border-[#F1F1F1] flex justify-between items-center">
+                                    <div class="img-area-title flex items-center gap-3">
+                                        <img src="ape/img-7505.png" width="60px" class="rounded-[20px]" alt="">
+                                        <a target="_blank"
+                                            href="https://opensea.io/assets/ethereum/0x4db1f25d3d98600140dfc18deb7515be5bd293af/7505"
+                                            class="text-black font-bold">
+                                            HAPE #7505
+                                        </a>
+                                    </div>
+                                    <div class="area  flex items-center justify-start">
+                                        <div data-tooltip-target="tooltip-price1"
+                                            class="price-eth hover:bg-[#ffffff] bg-[#e7e7e7] px-3  py-1 rounded-[14px] flex items-center gap-1 cursor-default">
+                                            <p class="text-black font-bold">10 ETH</p>
+                                            <span class="text-[#2181E2] text-[19px]">
+                                                <ion-icon name="flash"></ion-icon>
+                                            </span>
+                                            <div id="tooltip-price1" role="tooltip"
+                                                class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
+                                                Current Price
+                                                <div class="tooltip-arrow" data-popper-arrow></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div data-tooltip-target="tooltip-owner1"
+                                        class="price-eth   flex items-center gap-1 cursor-default">
+                                        <p class="text-blue-500 font-medium">Cyber_H</p>
+                                        <div id="tooltip-owner1" role="tooltip"
+                                            class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
+                                            Owner
+                                            <div class="tooltip-arrow" data-popper-arrow></div>
+                                        </div>
+                                    </div>
+                                    <div class="fire px-1">
+                                        <ion-icon name="flame" class="text-[30px] text-red-600"></ion-icon>
+                                    </div>
+                                </div>
+                                <div
+                                    class="card2 w-full hover:bg-[#f1f0f0]  px-5 py-4 rounded-[20px] border-2 border-[#F1F1F1] flex justify-between items-center">
+                                    <div class="img-area-title   flex  items-center gap-3 ">
+                                        <img src="ape/img-2353.png" width="60px" class="rounded-[20px]" alt="">
+                                        <a target="_blank"
+                                            href="https://opensea.io/assets/ethereum/0x4db1f25d3d98600140dfc18deb7515be5bd293af/2353"
+                                            class="text-black font-bold ">
+                                            HAPE #2353
+                                        </a>
+                                    </div>
+                                    <div data-tooltip-target="tooltip-price2"
+                                        class="price-eth hover:bg-[#ffffff] bg-[#e7e7e7] px-3  py-1 rounded-[14px] flex items-center gap-1 cursor-default">
+                                        <p class="text-black font-bold">10 ETH</p>
+                                        <span class="text-[#2181E2] text-[19px]">
+                                            <ion-icon name="flash"></ion-icon>
+                                        </span>
+                                        <div id="tooltip-price2" role="tooltip"
+                                            class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
+                                            Current Price
+                                            <div class="tooltip-arrow" data-popper-arrow></div>
+                                        </div>
+                                    </div>
+                                    <div data-tooltip-target="tooltip-owner2"
+                                        class="price-eth  px-3 py-1  flex items-center gap-1 cursor-default">
+                                        <p class="text-blue-500 font-medium">ABCD__123</p>
+                                        <div id="tooltip-owner2" role="tooltip"
+                                            class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
+                                            Owner
+                                            <div class="tooltip-arrow" data-popper-arrow></div>
+                                        </div>
+                                    </div>
+                                    <div class="fire px-1">
+                                        <ion-icon name="flame" class="text-[30px] text-red-600"></ion-icon>
+                                    </div>
+                                </div>
+                                <div
+                                    class="card3 w-full hover:bg-[#f1f0f0]  px-5 py-4 rounded-[20px] border-2 border-[#F1F1F1] flex justify-between items-center">
+                                    <div class="img-area-title flex items-center gap-3">
+                                        <img src="ape/img-1907.png" width="60px" class="rounded-[20px]" alt="">
+                                        <a target="_blank"
+                                            href="https://opensea.io/assets/ethereum/0x4db1f25d3d98600140dfc18deb7515be5bd293af/1907"
+                                            class="text-black font-bold">
+                                            HAPE #1907
+                                        </a>
+                                    </div>
+                                    <div data-tooltip-target="tooltip-price3"
+                                        class="price-eth hover:bg-[#ffffff] bg-[#e7e7e7] px-3 py-1 rounded-[14px] flex items-center gap-1 cursor-default">
+                                        <p class="text-black font-bold">9 ETH</p>
+                                        <span class="text-[#2181E2] text-[19px]">
+                                            <ion-icon name="flash"></ion-icon>
+                                        </span>
+                                        <div id="tooltip-price3" role="tooltip"
+                                            class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
+                                            Current Price
+                                            <div class="tooltip-arrow" data-popper-arrow></div>
+                                        </div>
+                                    </div>
+                                    <div data-tooltip-target="tooltip-owner3"
+                                        class="price-eth  px-3 py-1  flex items-center gap-1 cursor-default">
+                                        <p class="text-blue-500 font-medium">KayJay15</p>
+                                        <div id="tooltip-owner3" role="tooltip"
+                                            class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
+                                            Owner
+                                            <div class="tooltip-arrow" data-popper-arrow></div>
+                                        </div>
+                                    </div>
+                                    <div class="fire px-1">
+                                        <ion-icon name="flame" class="text-[30px] text-red-600"></ion-icon>
+                                    </div>
+                                </div>
+                                <div
+                                    class="card4 w-full hover:bg-[#f1f0f0]  px-5 py-4 rounded-[20px] border-2 border-[#F1F1F1] flex justify-between items-center">
+                                    <div class="img-area-title flex items-center gap-3">
+                                        <img src="ape/img-2311.png" width="60px" class="rounded-[20px]" alt="">
+                                        <a target="_blank"
+                                            href="https://opensea.io/assets/ethereum/0x4db1f25d3d98600140dfc18deb7515be5bd293af/2311"
+                                            class="text-black font-bold">
+                                            HAPE #2311
+                                        </a>
+                                    </div>
+                                    <div data-tooltip-target="tooltip-price4"
+                                        class="price-eth hover:bg-[#ffffff] bg-[#e7e7e7] px-3 py-1 rounded-[14px] flex items-center gap-1 cursor-default">
+                                        <p class="text-black font-bold">--</p>
+                                        <span class="text-[#2181E2] text-[19px]">
+                                            <ion-icon name="flash"></ion-icon>
+                                        </span>
+                                        <div id="tooltip-price4" role="tooltip"
+                                            class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
+                                            Current Price
+                                            <div class="tooltip-arrow" data-popper-arrow></div>
+                                        </div>
+                                    </div>
+                                    <div data-tooltip-target="tooltip-owner4"
+                                        class="price-eth  px-3 py-1  flex  items-center gap-1 cursor-default">
+                                        <p class="text-blue-500 font-medium">Sevethe</p>
+                                        <div id="tooltip-owner4" role="tooltip"
+                                            class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
+                                            Owner
+                                            <div class="tooltip-arrow" data-popper-arrow></div>
+                                        </div>
+                                    </div>
+                                    <div class="fire px-1">
+                                        <ion-icon name="flame" class="text-[30px]"></ion-icon>
+                                    </div>
+                                </div>
+                                <div
+                                    class="card5 w-full hover:bg-[#f1f0f0]  px-5 py-4 rounded-[20px] border-2 border-[#F1F1F1] flex justify-between items-center">
+                                    <div class="img-area-title flex items-center gap-3">
+                                        <img src="ape/img-1966.png" width="60px" class="rounded-[20px]" alt="">
+                                        <a target="_blank"
+                                            href="https://opensea.io/assets/ethereum/0x4db1f25d3d98600140dfc18deb7515be5bd293af/1966"
+                                            class="text-black font-bold">
+                                            HAPE #1966
+                                        </a>
+                                    </div>
+                                    <div data-tooltip-target="tooltip-price5"
+                                        class="price-eth hover:bg-[#ffffff] bg-[#e7e7e7] px-3 py-1 rounded-[14px] flex items-center gap-1 cursor-default">
+                                        <p class="text-black font-bold">25 ETH</p>
+                                        <span class="text-[#2181E2] text-[19px]">
+                                            <ion-icon name="flash"></ion-icon>
+                                        </span>
+                                        <div id="tooltip-price5" role="tooltip"
+                                            class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
+                                            Current Price
+                                            <div class="tooltip-arrow" data-popper-arrow></div>
+                                        </div>
+                                    </div>
+                                    <div data-tooltip-target="tooltip-owner5"
+                                        class="price-eth  px-3 py-1  flex  items-center gap-1 cursor-default">
+                                        <p class="text-blue-500 font-medium">ILfe66</p>
+                                        <div id="tooltip-owner5" role="tooltip"
+                                            class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
+                                            Owner
+                                            <div class="tooltip-arrow" data-popper-arrow></div>
+                                        </div>
+                                    </div>
+                                    <div class="fire px-1">
+                                        <ion-icon name="flame" class="text-[30px]"></ion-icon>
+                                    </div>
+                                </div>
+                                <div
+                                    class="card6 w-full hover:bg-[#f1f0f0]  px-5 py-4 rounded-[20px] border-2 border-[#F1F1F1] flex justify-between items-center">
+                                    <div class="img-area-title flex items-center gap-3">
+                                        <img src="ape/img-433.png" width="60px" class="rounded-[20px]" alt="">
+                                        <a target="_blank"
+                                            href="https://opensea.io/assets/ethereum/0x4db1f25d3d98600140dfc18deb7515be5bd293af/433"
+                                            class="text-black font-bold">
+                                            HAPE #433
+                                        </a>
+                                    </div>
+                                    <div data-tooltip-target="tooltip-price6"
+                                        class="price-eth hover:bg-[#ffffff] bg-[#e7e7e7] px-3 py-1 rounded-[14px] flex items-center gap-1 cursor-default">
+                                        <p class="text-black font-bold">25 ETH</p>
+                                        <span class="text-[#2181E2] text-[19px]">
+                                            <ion-icon name="flash"></ion-icon>
+                                        </span>
+                                        <div id="tooltip-price6" role="tooltip"
+                                            class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
+                                            Current Price
+                                            <div class="tooltip-arrow" data-popper-arrow></div>
+                                        </div>
+                                    </div>
+                                    <div data-tooltip-target="tooltip-owner6"
+                                        class="price-eth  px-3 py-1  flex  items-center gap-1 cursor-default">
+                                        <p class="text-blue-500 font-medium">NeoFuQ</p>
+                                        <div id="tooltip-owner6" role="tooltip"
+                                            class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
+                                            Owner
+                                            <div class="tooltip-arrow" data-popper-arrow></div>
+                                        </div>
+                                    </div>
+                                    <div class="fire px-1">
+                                        <ion-icon name="flame" class="text-[30px] text-red-600"></ion-icon>
+                                    </div>
+                                </div>
+                                <div
+                                    class="card7 w-full hover:bg-[#f1f0f0]  px-5 py-4 rounded-[20px] border-2 border-[#F1F1F1] flex justify-between items-center">
+                                    <div class="img-area-title flex items-center gap-3">
+                                        <img src="ape/img-1136.png" width="60px" class="rounded-[20px]" alt="">
+                                        <a target="_blank"
+                                            href="https://opensea.io/assets/ethereum/0x4db1f25d3d98600140dfc18deb7515be5bd293af/1136"
+                                            class="text-black font-bold">
+                                            HAPE #1136
+                                        </a>
+                                    </div>
+                                    <div data-tooltip-target="tooltip-price7"
+                                        class="price-eth hover:bg-[#ffffff] bg-[#e7e7e7] px-3 py-1 rounded-[14px] flex items-center gap-1 cursor-default">
+                                        <p class="text-black font-bold">18.1 ETH</p>
+                                        <span class="text-[#2181E2] text-[19px]">
+                                            <ion-icon name="flash"></ion-icon>
+                                        </span>
+                                        <div id="tooltip-price7" role="tooltip"
+                                            class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
+                                            Current Price
+                                            <div class="tooltip-arrow" data-popper-arrow></div>
+                                        </div>
+                                    </div>
+                                    <div data-tooltip-target="tooltip-owner7"
+                                        class="price-eth  px-3 py-1  flex  items-center gap-1 cursor-default">
+                                        <p class="text-blue-500 font-medium">8093DD</p>
+                                        <div id="tooltip-owner7" role="tooltip"
+                                            class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
+                                            Owner
+                                            <div class="tooltip-arrow" data-popper-arrow></div>
+                                        </div>
+                                    </div>
+                                    <div class="fire px-1">
+                                        <ion-icon name="flame" class="text-[30px] text-red-600"></ion-icon>
+                                    </div>
+                                </div>
+                                <div
+                                    class="card8 w-full hover:bg-[#f1f0f0]  px-5 py-4 rounded-[20px] border-2 border-[#F1F1F1] flex justify-between items-center">
+                                    <div class="img-area-title flex items-center gap-3">
+                                        <img src="ape/img-7114.png" width="60px" class="rounded-[20px]" alt="">
+                                        <a target="_blank"
+                                            href="https://opensea.io/assets/ethereum/0x4db1f25d3d98600140dfc18deb7515be5bd293af/7114"
+                                            class="text-black font-bold">
+                                            HAPE #7114
+                                        </a>
+                                    </div>
+                                    <div data-tooltip-target="tooltip-price8"
+                                        class="price-eth hover:bg-[#ffffff] bg-[#e7e7e7] px-3 py-1 rounded-[14px] flex items-center gap-1 cursor-default">
+                                        <p class="text-black font-bold">16 ETH</p>
+                                        <span class="text-[#2181E2] text-[19px]">
+                                            <ion-icon name="flash"></ion-icon>
+                                        </span>
+                                        <div id="tooltip-price8" role="tooltip"
+                                            class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
+                                            Current Price
+                                            <div class="tooltip-arrow" data-popper-arrow></div>
+                                        </div>
+                                    </div>
+                                    <div data-tooltip-target="tooltip-owner8"
+                                        class="price-eth  px-3 py-1  flex  items-center gap-1 cursor-default">
+                                        <p class="text-blue-500 font-medium">C855BC</p>
+                                        <div id="tooltip-owner8" role="tooltip"
+                                            class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
+                                            Owner
+                                            <div class="tooltip-arrow" data-popper-arrow></div>
+                                        </div>
+                                    </div>
+                                    <div class="fire px-1">
+                                        <ion-icon name="flame" class="text-[30px]"></ion-icon>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item w-full flex justify-center items-center" id="item2">
+                            <div class="area grid md:grid-cols-6 grid-cols-2 gap-3">
+                                <div class="card 01 flex flex-col justify-center items-center">
+                                    <a target="_blank"
+                                        href="https://opensea.io/assets/ethereum/0x4db1f25d3d98600140dfc18deb7515be5bd293af/2185">
+                                        <div
+                                            class="img-container border-2 border-b-0 relative rounded-t-[12px] overflow-hidden">
+                                            <img src="ape/img-2185.png"
+                                                class="w-[100%] h-[100%]  scale-105 duration-300" alt="">
+                                        </div>
+                                        <div
+                                            class="detail px-3 py-2 gap-6  border-2 border-t-0 rounded-b-[12px] flex flex-col  bg-[#F7F7F7]">
+                                            <p class="font-bold text-[20px]">HAPE #2185</p>
+                                            <div class="price space-y-2">
+                                                <p class="font-bold text-[16px]">0.1949 ETH</p>
+                                                <div class="last-sale flex justify-between">
+                                                    <p class="font-medium text-[16px] text-[#A1A1A1]">Last Sale: 0.17
+                                                        WETH</p>
+                                                    <ion-icon name="flame" class="text-[20px] text-red-600"></ion-icon>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="card 02 flex flex-col justify-center items-center">
+                                    <a target="_blank"
+                                        href="https://opensea.io/assets/ethereum/0x4db1f25d3d98600140dfc18deb7515be5bd293af/4445">
+                                        <div
+                                            class="img-container border-2 border-b-0 relative rounded-t-[12px] overflow-hidden">
+                                            <img src="ape/img-4445.png"
+                                                class="w-[100%] h-[100%]  scale-105 duration-300" alt="">
+                                        </div>
+                                        <div
+                                            class="detail px-3 py-2 gap-6  border-2 border-t-0 rounded-b-[12px] flex flex-col  bg-[#F7F7F7]">
+                                            <p class="font-bold text-[20px]">HAPE #4445 </p>
+                                            <div class="price space-y-2">
+                                                <p class="font-bold text-[16px]">0.1949 ETH</p>
+                                                <div class="last-sale flex justify-between">
+                                                    <p class="font-medium text-[16px] text-[#A1A1A1]">Last Sale: 0.19
+                                                        WETH</p>
+                                                    <ion-icon name="flame" class="text-[20px] text-red-600"></ion-icon>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="card 03 flex flex-col justify-center items-center">
+                                    <a target="_blank"
+                                        href="https://opensea.io/assets/ethereum/0x4db1f25d3d98600140dfc18deb7515be5bd293af/7596">
+                                        <div
+                                            class="img-container border-2 border-b-0 relative rounded-t-[12px] overflow-hidden">
+                                            <img src="ape/img-7596.png"
+                                                class="w-[100%] h-[100%]  scale-105 duration-300" alt="">
+                                        </div>
+                                        <div
+                                            class="detail px-3 py-2 gap-6  border-2 border-t-0 rounded-b-[12px] flex flex-col  bg-[#F7F7F7]">
+                                            <p class="font-bold text-[20px]">HAPE #7596 </p>
+                                            <div class="price space-y-2">
+                                                <p class="font-bold text-[16px]">0.1949 ETH</p>
+                                                <div class="last-sale flex justify-between">
+                                                    <p class="font-medium text-[16px] text-[#A1A1A1]">Last Sale: 0.25
+                                                        WETH</p>
+                                                    <ion-icon name="flame" class="text-[20px] text-red-600"></ion-icon>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="card 04 flex flex-col justify-center items-center">
+                                    <a target="_blank"
+                                        href="https://opensea.io/assets/ethereum/0x4db1f25d3d98600140dfc18deb7515be5bd293af/6910">
+                                        <div
+                                            class="img-container border-2 border-b-0 relative rounded-t-[12px] overflow-hidden">
+                                            <img src="ape/img-6910.png"
+                                                class="w-[100%] h-[100%]  scale-105 duration-300" alt="">
+                                        </div>
+                                        <div
+                                            class="detail px-3 py-2 gap-6  border-2 border-t-0 rounded-b-[12px] flex flex-col  bg-[#F7F7F7]">
+                                            <p class="font-bold text-[20px]">HAPE #6910 </p>
+                                            <div class="price space-y-2">
+                                                <p class="font-bold text-[16px]">62.42 ETH</p>
+                                                <div class="last-sale flex justify-between">
+                                                    <p class="font-medium text-[16px] text-[#A1A1A1]">Last Sale: 0.138
+                                                        ETH</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="card 05 flex flex-col justify-center items-center">
+                                    <a target="_blank"
+                                        href="https://opensea.io/assets/ethereum/0x4db1f25d3d98600140dfc18deb7515be5bd293af/6910">
+                                        <div
+                                            class="img-container border-2 border-b-0 relative rounded-t-[12px] overflow-hidden">
+                                            <img src="ape/img-1966.png"
+                                                class="w-[100%] h-[100%]  scale-105 duration-300" alt="">
+                                        </div>
+                                        <div
+                                            class="detail px-3 py-2 gap-6  border-2 border-t-0 rounded-b-[12px] flex flex-col  bg-[#F7F7F7]">
+                                            <p class="font-bold text-[20px]">HAPE #1966 </p>
+                                            <div class="price space-y-2">
+                                                <p class="font-bold text-[16px]">25 ETH</p>
+                                                <div class="last-sale flex justify-between">
+                                                    <p class="font-medium text-[16px] text-[#A1A1A1]">Last Sale: 1 ETH
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="card 06 flex flex-col justify-center items-center">
+                                    <a target="_blank"
+                                        href="https://opensea.io/assets/ethereum/0x4db1f25d3d98600140dfc18deb7515be5bd293af/433">
+                                        <div
+                                            class="img-container border-2 border-b-0 relative rounded-t-[12px] overflow-hidden">
+                                            <img src="ape/img-433.png" class="w-[100%] h-[100%]  scale-105 duration-300"
+                                                alt="">
+                                        </div>
+                                        <div
+                                            class="detail px-3 py-2 gap-6  border-2 border-t-0 rounded-b-[12px] flex flex-col  bg-[#F7F7F7]">
+                                            <p class="font-bold text-[20px]">HAPE #433 </p>
+                                            <div class="price space-y-2">
+                                                <p class="font-bold text-[16px]">25 ETH</p>
+                                                <div class="last-sale flex justify-between">
+                                                    <p class="font-medium text-[16px] text-[#A1A1A1]">Last Sale: 11.40
+                                                        WETH</p>
+                                                    <ion-icon name="flame" class="text-[20px] text-red-600"></ion-icon>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="card 07 flex flex-col justify-center items-center">
+                                    <a target="_blank"
+                                        href="https://opensea.io/assets/ethereum/0x4db1f25d3d98600140dfc18deb7515be5bd293af/1136">
+                                        <div
+                                            class="img-container border-2 border-b-0 relative rounded-t-[12px] overflow-hidden">
+                                            <img src="ape/img-1136.png"
+                                                class="w-[100%] h-[100%]  scale-105 duration-300" alt="">
+                                        </div>
+                                        <div
+                                            class="detail px-3 py-2 gap-6  border-2 border-t-0 rounded-b-[12px] flex flex-col  bg-[#F7F7F7]">
+                                            <p class="font-bold text-[20px]">HAPE #1136 </p>
+                                            <div class="price space-y-2">
+                                                <p class="font-bold text-[16px]">18.1 ETH</p>
+                                                <div class="last-sale flex justify-between">
+                                                    <p class="font-medium text-[16px] text-[#A1A1A1]">Last Sale: 0.38
+                                                        ETH</p>
+                                                    <ion-icon name="flame" class="text-[20px] text-red-600"></ion-icon>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="card 08 flex flex-col justify-center items-center">
+                                    <a target="_blank"
+                                        href="https://opensea.io/assets/ethereum/0x4db1f25d3d98600140dfc18deb7515be5bd293af/7114">
+                                        <div
+                                            class="img-container border-2 border-b-0 relative rounded-t-[12px] overflow-hidden">
+                                            <img src="ape/img-7114.png"
+                                                class="w-[100%] h-[100%]  scale-105 duration-300" alt="">
+                                        </div>
+                                        <div
+                                            class="detail px-3 py-2 gap-6  border-2 border-t-0 rounded-b-[12px] flex flex-col  bg-[#F7F7F7]">
+                                            <p class="font-bold text-[20px]">HAPE #7114</p>
+                                            <div class="price space-y-2">
+                                                <p class="font-bold text-[16px]">16 ETH</p>
+                                                <div class="last-sale flex justify-between">
+                                                    <p class="font-medium text-[16px] text-[#A1A1A1]">Last Sale: 6.99
+                                                        ETH</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="card 09 flex flex-col justify-center items-center">
+                                    <a target="_blank"
+                                        href="https://opensea.io/assets/ethereum/0x4db1f25d3d98600140dfc18deb7515be5bd293af/2353">
+                                        <div
+                                            class="img-container border-2 border-b-0 relative rounded-t-[12px] overflow-hidden">
+                                            <img src="ape/img-2353.png"
+                                                class="w-[100%] h-[100%]  scale-105 duration-300" alt="">
+                                        </div>
+                                        <div
+                                            class="detail px-3 py-2 gap-6  border-2 border-t-0 rounded-b-[12px] flex flex-col  bg-[#F7F7F7]">
+                                            <p class="font-bold text-[20px]">HAPE #2353</p>
+                                            <div class="price space-y-2">
+                                                <p class="font-bold text-[16px]">10 ETH</p>
+                                                <div class="last-sale flex justify-between">
+                                                    <p class="font-medium text-[16px] text-[#A1A1A1]">Last Sale: 3 WETH
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="card 10 flex flex-col justify-center items-center">
+                                    <a target="_blank"
+                                        href="https://opensea.io/assets/ethereum/0x4db1f25d3d98600140dfc18deb7515be5bd293af/1907">
+                                        <div
+                                            class="img-container border-2 border-b-0 relative rounded-t-[12px] overflow-hidden">
+                                            <img src="ape/img-1907.png"
+                                                class="w-[100%] h-[100%]  scale-105 duration-300" alt="">
+                                        </div>
+                                        <div
+                                            class="detail px-3 py-2 gap-6  border-2 border-t-0 rounded-b-[12px] flex flex-col  bg-[#F7F7F7]">
+                                            <p class="font-bold text-[20px]">HAPE #1907</p>
+                                            <div class="price space-y-2">
+                                                <p class="font-bold text-[16px]">9 ETH</p>
+                                                <div class="last-sale flex justify-between">
+                                                    <p class="font-medium text-[16px] text-[#A1A1A1]">Last Sale: 4 WETH
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="card 11 flex flex-col justify-center items-center">
+                                    <a target="_blank"
+                                        href="https://opensea.io/assets/ethereum/0x4db1f25d3d98600140dfc18deb7515be5bd293af/7505">
+                                        <div
+                                            class="img-container border-2 border-b-0 relative rounded-t-[12px] overflow-hidden">
+                                            <img src="ape/img-7505.png"
+                                                class="w-[100%] h-[100%]  scale-105 duration-300" alt="">
+                                        </div>
+                                        <div
+                                            class="detail px-3 py-2 gap-6  border-2 border-t-0 rounded-b-[12px] flex flex-col  bg-[#F7F7F7]">
+                                            <p class="font-bold text-[20px]">HAPE #7505</p>
+                                            <div class="price space-y-2">
+                                                <p class="font-bold text-[16px]">10 ETH</p>
+                                                <div class="last-sale flex justify-between">
+                                                    <p class="font-medium text-[16px] text-[#A1A1A1]">Last Sale: 9.43
+                                                        WETH</p>
+                                                    <ion-icon name="flame" class="text-[20px] text-red-600"></ion-icon>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="card 12 flex flex-col justify-center items-center">
+                                    <a target="_blank"
+                                        href="https://opensea.io/assets/ethereum/0x4db1f25d3d98600140dfc18deb7515be5bd293af/2311">
+                                        <div
+                                            class="img-container border-2 border-b-0 relative rounded-t-[12px] overflow-hidden">
+                                            <img src="ape/img-2311.png"
+                                                class="w-[100%] h-[100%]  scale-105 duration-300" alt="">
+                                        </div>
+                                        <div
+                                            class="detail px-3 py-2 gap-6  border-2 border-t-0 rounded-b-[12px] flex flex-col  bg-[#F7F7F7]">
+                                            <p class="font-bold text-[20px]">HAPE #2311</p>
+                                            <div class="price space-y-2">
+                                                <p class="font-bold text-[16px]">--</p>
+                                                <div class="last-sale flex justify-between">
+                                                    <p class="font-medium text-[16px] text-[#A1A1A1]">Last Sale: 50 ETH
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item w-full flex justify-center items-center default" id="item3">
+                            <div class="area grid md:grid-cols-4 grid-cols-2 gap-3">
+                                <div class="card 01 flex flex-col justify-center items-center">
+                                    <a target="_blank"
+                                        href="https://opensea.io/assets/ethereum/0x4db1f25d3d98600140dfc18deb7515be5bd293af/2185">
+                                        <div
+                                            class="img-container border-2 border-b-0 relative rounded-t-[22px] overflow-hidden">
+                                            <img src="ape/img-2185.png"
+                                                class="w-[100%] h-[100%]  scale-105 duration-300" alt="">
+                                        </div>
+                                        <div
+                                            class="detail px-5 py-5 gap-6 border-2 border-t-0 rounded-b-[22px] flex flex-col  bg-[#F7F7F7]">
+                                            <p class="font-bold text-[20px]">HAPE #2185</p>
+                                            <div class="price space-y-2">
+                                                <p class="font-bold text-[16px]">0.1949 ETH</p>
+                                                <div class="last-sale flex justify-between">
+                                                    <p class="font-medium text-[16px] text-[#A1A1A1]">Last Sale: 0.17
+                                                        WETH</p>
+                                                    <ion-icon name="flame" class="text-[20px] text-red-600"></ion-icon>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="card 02 flex flex-col justify-center items-center">
+                                    <a target="_blank"
+                                        href="https://opensea.io/assets/ethereum/0x4db1f25d3d98600140dfc18deb7515be5bd293af/4445">
+                                        <div
+                                            class="img-container border-2 border-b-0 relative rounded-t-[22px] overflow-hidden">
+                                            <img src="ape/img-4445.png"
+                                                class="w-[100%] h-[100%]  scale-105 duration-300" alt="">
+                                        </div>
+                                        <div
+                                            class="detail px-5 py-5 gap-6 border-2 border-t-0 rounded-b-[22px] flex flex-col  bg-[#F7F7F7]">
+                                            <p class="font-bold text-[20px]">HAPE #4445 </p>
+                                            <div class="price space-y-2">
+                                                <p class="font-bold text-[16px]">0.1949 ETH</p>
+                                                <div class="last-sale flex justify-between">
+                                                    <p class="font-medium text-[16px] text-[#A1A1A1]">Last Sale: 0.19
+                                                        WETH</p>
+                                                    <ion-icon name="flame" class="text-[20px] text-red-600"></ion-icon>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="card 03 flex flex-col justify-center items-center">
+                                    <a target="_blank"
+                                        href="https://opensea.io/assets/ethereum/0x4db1f25d3d98600140dfc18deb7515be5bd293af/7596">
+                                        <div
+                                            class="img-container border-2 border-b-0 relative rounded-t-[22px] overflow-hidden">
+                                            <img src="ape/img-7596.png"
+                                                class="w-[100%] h-[100%]  scale-105 duration-300" alt="">
+                                        </div>
+                                        <div
+                                            class="detail px-5 py-5 gap-6 border-2 border-t-0 rounded-b-[22px] flex flex-col  bg-[#F7F7F7]">
+                                            <p class="font-bold text-[20px]">HAPE #7596 </p>
+                                            <div class="price space-y-2">
+                                                <p class="font-bold text-[16px]">0.1949 ETH</p>
+                                                <div class="last-sale flex justify-between">
+                                                    <p class="font-medium text-[16px] text-[#A1A1A1]">Last Sale: 0.25
+                                                        WETH</p>
+                                                    <ion-icon name="flame" class="text-[20px] text-red-600"></ion-icon>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="card 04 flex flex-col justify-center items-center">
+                                    <a target="_blank"
+                                        href="https://opensea.io/assets/ethereum/0x4db1f25d3d98600140dfc18deb7515be5bd293af/6910">
+                                        <div
+                                            class="img-container border-2 border-b-0 relative rounded-t-[22px] overflow-hidden">
+                                            <img src="ape/img-6910.png"
+                                                class="w-[100%] h-[100%]  scale-105 duration-300" alt="">
+                                        </div>
+                                        <div
+                                            class="detail px-5 py-5 gap-6 border-2 border-t-0 rounded-b-[22px] flex flex-col  bg-[#F7F7F7]">
+                                            <p class="font-bold text-[20px]">HAPE #6910 </p>
+                                            <div class="price space-y-2">
+                                                <p class="font-bold text-[16px]">62.42 ETH</p>
+                                                <div class="last-sale flex justify-between">
+                                                    <p class="font-medium text-[16px] text-[#A1A1A1]">Last Sale: 0.138
+                                                        ETH</p>
+                                                    <ion-icon name="flame" class="text-[20px]"></ion-icon>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="card 05 flex flex-col justify-center items-center">
+                                    <a target="_blank"
+                                        href="https://opensea.io/assets/ethereum/0x4db1f25d3d98600140dfc18deb7515be5bd293af/6910">
+                                        <div
+                                            class="img-container border-2 border-b-0 relative rounded-t-[22px] overflow-hidden">
+                                            <img src="ape/img-1966.png"
+                                                class="w-[100%] h-[100%]  scale-105 duration-300" alt="">
+                                        </div>
+                                        <div
+                                            class="detail px-5 py-5 gap-6 border-2 border-t-0 rounded-b-[22px] flex flex-col  bg-[#F7F7F7]">
+                                            <p class="font-bold text-[20px]">HAPE #1966 </p>
+                                            <div class="price space-y-2">
+                                                <p class="font-bold text-[16px]">25 ETH</p>
+                                                <div class="last-sale flex justify-between">
+                                                    <p class="font-medium text-[16px] text-[#A1A1A1]">Last Sale: 1 ETH
+                                                    </p>
+                                                    <ion-icon name="flame" class="text-[20px]"></ion-icon>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="card 06 flex flex-col justify-center items-center">
+                                    <a target="_blank"
+                                        href="https://opensea.io/assets/ethereum/0x4db1f25d3d98600140dfc18deb7515be5bd293af/433">
+                                        <div
+                                            class="img-container border-2 border-b-0 relative rounded-t-[22px] overflow-hidden">
+                                            <img src="ape/img-433.png" class="w-[100%] h-[100%]  scale-105 duration-300"
+                                                alt="">
+                                        </div>
+                                        <div
+                                            class="detail px-5 py-5 gap-6 border-2 border-t-0 rounded-b-[22px] flex flex-col  bg-[#F7F7F7]">
+                                            <p class="font-bold text-[20px]">HAPE #433 </p>
+                                            <div class="price space-y-2">
+                                                <p class="font-bold text-[16px]">25 ETH</p>
+                                                <div class="last-sale flex justify-between">
+                                                    <p class="font-medium text-[16px] text-[#A1A1A1]">Last Sale: 11.40
+                                                        WETH</p>
+                                                    <ion-icon name="flame" class="text-[20px] text-red-600"></ion-icon>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="card 07 flex flex-col justify-center items-center">
+                                    <a target="_blank"
+                                        href="https://opensea.io/assets/ethereum/0x4db1f25d3d98600140dfc18deb7515be5bd293af/1136">
+                                        <div
+                                            class="img-container border-2 border-b-0 relative rounded-t-[22px] overflow-hidden">
+                                            <img src="ape/img-1136.png"
+                                                class="w-[100%] h-[100%]  scale-105 duration-300" alt="">
+                                        </div>
+                                        <div
+                                            class="detail px-5 py-5 gap-6 border-2 border-t-0 rounded-b-[22px] flex flex-col  bg-[#F7F7F7]">
+                                            <p class="font-bold text-[20px]">HAPE #1136 </p>
+                                            <div class="price space-y-2">
+                                                <p class="font-bold text-[16px]">18.1 ETH</p>
+                                                <div class="last-sale flex justify-between">
+                                                    <p class="font-medium text-[16px] text-[#A1A1A1]">Last Sale: 0.38
+                                                        ETH</p>
+                                                    <ion-icon name="flame" class="text-[20px] text-red-600"></ion-icon>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="card 08 flex flex-col justify-center items-center">
+                                    <a target="_blank"
+                                        href="https://opensea.io/assets/ethereum/0x4db1f25d3d98600140dfc18deb7515be5bd293af/7114">
+                                        <div
+                                            class="img-container border-2 border-b-0 relative rounded-t-[22px] overflow-hidden">
+                                            <img src="ape/img-7114.png"
+                                                class="w-[100%] h-[100%]  scale-105 duration-300" alt="">
+                                        </div>
+                                        <div
+                                            class="detail px-5 py-5 gap-6 border-2 border-t-0 rounded-b-[22px] flex flex-col  bg-[#F7F7F7]">
+                                            <p class="font-bold text-[20px]">HAPE #7114</p>
+                                            <div class="price space-y-2">
+                                                <p class="font-bold text-[16px]">16 ETH</p>
+                                                <div class="last-sale flex justify-between">
+                                                    <p class="font-medium text-[16px] text-[#A1A1A1]">Last Sale: 6.99
+                                                        ETH</p>
+                                                    <ion-icon name="flame" class="text-[20px]"></ion-icon>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item w-full flex justify-center items-center" id="item4">
+                            <div class="area grid md:grid-cols-3 grid-cols-2 gap-3">
+                                <div class="card 01 flex flex-col justify-center items-center">
+                                    <a target="_blank"
+                                        href="https://opensea.io/assets/ethereum/0x4db1f25d3d98600140dfc18deb7515be5bd293af/2185">
+                                        <div
+                                            class="img-container border-2 border-b-0 relative rounded-t-[22px] overflow-hidden">
+                                            <img src="ape/img-2185.png"
+                                                class="w-[100%] h-[100%]  scale-105 duration-300" alt="">
+                                        </div>
+                                        <div
+                                            class="detail px-5 py-5 gap-6 border-2 border-t-0 rounded-b-[22px] flex flex-col  bg-[#F7F7F7]">
+                                            <p class="font-bold text-[20px]">HAPE #2185</p>
+                                            <div class="price space-y-2">
+                                                <p class="font-bold text-[16px]">0.1949 ETH</p>
+                                                <div class="last-sale flex justify-between">
+                                                    <p class="font-medium text-[16px] text-[#A1A1A1]">Last Sale: 0.17
+                                                        WETH</p>
+                                                    <ion-icon name="flame" class="text-[20px] text-red-600"></ion-icon>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="card 02 flex flex-col justify-center items-center">
+                                    <a target="_blank"
+                                        href="https://opensea.io/assets/ethereum/0x4db1f25d3d98600140dfc18deb7515be5bd293af/4445">
+                                        <div
+                                            class="img-container border-2 border-b-0 relative rounded-t-[22px] overflow-hidden">
+                                            <img src="ape/img-4445.png"
+                                                class="w-[100%] h-[100%]  scale-105 duration-300" alt="">
+                                        </div>
+                                        <div
+                                            class="detail px-5 py-5 gap-6 border-2 border-t-0 rounded-b-[22px] flex flex-col  bg-[#F7F7F7]">
+                                            <p class="font-bold text-[20px]">HAPE #4445 </p>
+                                            <div class="price space-y-2">
+                                                <p class="font-bold text-[16px]">0.1949 ETH</p>
+                                                <div class="last-sale flex justify-between">
+                                                    <p class="font-medium text-[16px] text-[#A1A1A1]">Last Sale: 0.19
+                                                        WETH</p>
+                                                    <ion-icon name="flame" class="text-[20px] text-red-600"></ion-icon>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="card 03 flex flex-col justify-center items-center">
+                                    <a target="_blank"
+                                        href="https://opensea.io/assets/ethereum/0x4db1f25d3d98600140dfc18deb7515be5bd293af/7596">
+                                        <div
+                                            class="img-container border-2 border-b-0 relative rounded-t-[22px] overflow-hidden">
+                                            <img src="ape/img-7596.png"
+                                                class="w-[100%] h-[100%]  scale-105 duration-300" alt="">
+                                        </div>
+                                        <div
+                                            class="detail px-5 py-5 gap-6 border-2 border-t-0 rounded-b-[22px] flex flex-col  bg-[#F7F7F7]">
+                                            <p class="font-bold text-[20px]">HAPE #7596 </p>
+                                            <div class="price space-y-2">
+                                                <p class="font-bold text-[16px]">0.1949 ETH</p>
+                                                <div class="last-sale flex justify-between">
+                                                    <p class="font-medium text-[16px] text-[#A1A1A1]">Last Sale: 0.25
+                                                        WETH</p>
+                                                    <ion-icon name="flame" class="text-[20px] text-red-600"></ion-icon>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="card 04 flex flex-col justify-center items-center">
+                                    <a target="_blank"
+                                        href="https://opensea.io/assets/ethereum/0x4db1f25d3d98600140dfc18deb7515be5bd293af/6910">
+                                        <div
+                                            class="img-container border-2 border-b-0 relative rounded-t-[22px] overflow-hidden">
+                                            <img src="ape/img-6910.png"
+                                                class="w-[100%] h-[100%]  scale-105 duration-300" alt="">
+                                        </div>
+                                        <div
+                                            class="detail px-5 py-5 gap-6 border-2 border-t-0 rounded-b-[22px] flex flex-col  bg-[#F7F7F7]">
+                                            <p class="font-bold text-[20px]">HAPE #6910 </p>
+                                            <div class="price space-y-2">
+                                                <p class="font-bold text-[16px]">62.42 ETH</p>
+                                                <div class="last-sale flex justify-between">
+                                                    <p class="font-medium text-[16px] text-[#A1A1A1]">Last Sale: 0.138
+                                                        ETH</p>
+                                                    <ion-icon name="flame" class="text-[20px]"></ion-icon>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="card 05 flex flex-col justify-center items-center">
+                                    <a target="_blank"
+                                        href="https://opensea.io/assets/ethereum/0x4db1f25d3d98600140dfc18deb7515be5bd293af/6910">
+                                        <div
+                                            class="img-container border-2 border-b-0 relative rounded-t-[22px] overflow-hidden">
+                                            <img src="ape/img-1966.png"
+                                                class="w-[100%] h-[100%]  scale-105 duration-300" alt="">
+                                        </div>
+                                        <div
+                                            class="detail px-5 py-5 gap-6 border-2 border-t-0 rounded-b-[22px] flex flex-col  bg-[#F7F7F7]">
+                                            <p class="font-bold text-[20px]">HAPE #1966 </p>
+                                            <div class="price space-y-2">
+                                                <p class="font-bold text-[16px]">25 ETH</p>
+                                                <div class="last-sale flex justify-between">
+                                                    <p class="font-medium text-[16px] text-[#A1A1A1]">Last Sale: 1 ETH
+                                                    </p>
+                                                    <ion-icon name="flame" class="text-[20px]"></ion-icon>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="card 06 flex flex-col justify-center items-center">
+                                    <a target="_blank"
+                                        href="https://opensea.io/assets/ethereum/0x4db1f25d3d98600140dfc18deb7515be5bd293af/433">
+                                        <div
+                                            class="img-container border-2 border-b-0 relative rounded-t-[22px] overflow-hidden">
+                                            <img src="ape/img-433.png" class="w-[100%] h-[100%]  scale-105 duration-300"
+                                                alt="">
+                                        </div>
+                                        <div
+                                            class="detail px-5 py-5 gap-6 border-2 border-t-0 rounded-b-[22px] flex flex-col  bg-[#F7F7F7]">
+                                            <p class="font-bold text-[20px]">HAPE #433 </p>
+                                            <div class="price space-y-2">
+                                                <p class="font-bold text-[16px]">25 ETH</p>
+                                                <div class="last-sale flex justify-between">
+                                                    <p class="font-medium text-[16px] text-[#A1A1A1]">Last Sale: 11.40
+                                                        WETH</p>
+                                                    <ion-icon name="flame" class="text-[20px] text-red-600"></ion-icon>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- diesel x hape -->
+        <div class="diesel-x-ape w-full  flex justify-center items-center bg-white ">
+            <div class="w-full flex flex-col justify-center items-center pt-20 py-10">
+                <div class="title-diesel w-[90%] flex justify-center items-center">
+                    <p class="font-extrabold text-[74px]">DIESEL X HAPE.</p>
+                </div>
+                <div class="content-diesel px-5 flex w-[100vw]  justify-center gap-5 pt-5 py-7 ">
+                    <div class="card 01 flex flex-col justify-center items-center">
+                        <a target="_blank"
+                            href="https://opensea.io/assets/ethereum/0x4ce6c369516560b1e6fa49d41096746293c0a87f/355">
+                            <div class="img-container w-[400px]  h-[400px] relative rounded-t-[22px] overflow-hidden">
+                                <img src="ape/img-diesel-355.png" class="w-[100%] h-[100%]  scale-105 duration-300"
+                                    alt="">
+                            </div>
+                            <div class="detail px-5 py-5 gap-6 rounded-b-[22px] flex flex-col  bg-[#F7F7F7]">
+                                <p class="font-bold text-[20px]">Diesel x Hape #355</p>
+                                <div class="price space-y-2">
+                                    <p class="font-bold text-[16px]">0.27 ETH</p>
+                                    <div class="last-sale flex justify-between">
+                                        <p class="font-medium text-[16px] text-[#A1A1A1]">Last Sale: 0.23
+                                            WETH</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="card 02 flex flex-col justify-center items-center">
+                        <a target="_blank"
+                            href="https://opensea.io/assets/ethereum/0x4ce6c369516560b1e6fa49d41096746293c0a87f/933">
+                            <div class="img-container w-[400px]  h-[400px] relative rounded-t-[22px] overflow-hidden">
+                                <img src="ape/img-diesel-933.png" class="w-[100%] h-[100%]  scale-105 duration-300"
+                                    alt="">
+                            </div>
+                            <div class="detail px-5 py-5 gap-6 rounded-b-[22px] flex flex-col  bg-[#F7F7F7]">
+                                <p class="font-bold text-[20px]">Diesel x Hape #933</p>
+                                <div class="price space-y-2">
+                                    <p class="font-bold text-[16px]">--</p>
+                                    <div class="last-sale flex justify-between">
+                                        <p class="font-medium text-[16px] text-[#A1A1A1]">Last Sale: 0.23
+                                            WETH</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="card 03 flex flex-col justify-center items-center">
+                        <a target="_blank"
+                            href="https://opensea.io/assets/ethereum/0x4ce6c369516560b1e6fa49d41096746293c0a87f/1007">
+                            <div class="img-container w-[400px]  h-[400px] relative rounded-t-[22px] overflow-hidden">
+                                <img src="ape/img-diesel-1007.png" class="w-[100%] h-[100%]  scale-105 duration-300"
+                                    alt="">
+                            </div>
+                            <div class="detail px-5 py-5 gap-6 rounded-b-[22px] flex flex-col  bg-[#F7F7F7]">
+                                <p class="font-bold text-[20px]">Diesel x Hape #1007</p>
+                                <div class="price space-y-2">
+                                    <p class="font-bold text-[16px]">0.05 ETH</p>
+                                    <div class="last-sale flex justify-between">
+                                        <p class="font-medium text-[16px] text-[#A1A1A1]">Last Sale: 0.21
+                                            WETH</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="card 04 flex flex-col justify-center items-center">
+                        <a target="_blank"
+                            href="https://opensea.io/assets/ethereum/0x4ce6c369516560b1e6fa49d41096746293c0a87f/982">
+                            <div class="img-container w-[400px]  h-[400px] relative rounded-t-[22px] overflow-hidden">
+                                <img src="ape/img-diesel-982.png" class="w-[100%] h-[100%]  scale-105 duration-300"
+                                    alt="">
+                            </div>
+                            <div class="detail px-5 py-5 gap-6 rounded-b-[22px] flex flex-col  bg-[#F7F7F7]">
+                                <p class="font-bold text-[20px]">Diesel x Hape #982</p>
+                                <div class="price space-y-2">
+                                    <p class="font-bold text-[16px]">0.2 ETH</p>
+                                    <div class="last-sale flex justify-between">
+                                        <p class="font-medium text-[16px] text-[#A1A1A1]">Last Sale: 0.271
+                                            ETH</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="card 05 flex flex-col justify-center items-center">
+                        <a target="_blank"
+                            href="https://opensea.io/assets/ethereum/0x4ce6c369516560b1e6fa49d41096746293c0a87f/454">
+                            <div class="img-container w-[400px]  h-[400px] relative rounded-t-[22px] overflow-hidden">
+                                <img src="ape/img-diesel-454.png" class="w-[100%] h-[100%]  scale-105 duration-300"
+                                    alt="">
+                            </div>
+                            <div class="detail px-5 py-5 gap-6 rounded-b-[22px] flex flex-col  bg-[#F7F7F7]">
+                                <p class="font-bold text-[20px]">Diesel x Hape #454</p>
+                                <div class="price space-y-2">
+                                    <p class="font-bold text-[16px]">0.0149 ETH</p>
+                                    <div class="last-sale flex justify-between">
+                                        <p class="font-medium text-[16px] text-[#A1A1A1]">Last Sale: 0.07 ETH
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="btn flex justify-center items-center w-[90%] pt-2 ">
+                    <a target="_blank" href="https://opensea.io/collection/diesel-x-hape-2023">
+                        <div
+                            class="opensea flex justify-center px-5 rounded-[24px] py-4 items-center gap-4 bg-[#F7F7F7] border hover:border-[#00B2FF] duration-200 font-extrabold text-[20px]">
+                            <p>VIEW ON OPENSEA</p>
+                            <span>
+                                <svg width="40" height="41" viewBox="0 0 40 41" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M20 0.5C8.95667 0.5 0 9.45667 0 20.5C0 31.5433 8.95667 40.5 20 40.5C31.0433 40.5 40 31.5433 40 20.5C40 9.45667 31.0483 0.5 20 0.5ZM9.86667 21.1717L9.95167 21.0367L15.1567 12.8967C15.1741 12.8699 15.1984 12.8483 15.227 12.8342C15.2556 12.82 15.2876 12.8138 15.3194 12.8162C15.3512 12.8186 15.3819 12.8295 15.4081 12.8477C15.4343 12.866 15.4551 12.8909 15.4683 12.92C16.335 14.8683 17.0883 17.2917 16.735 18.8C16.5883 19.42 16.1767 20.26 15.7117 21.0367C15.652 21.1503 15.5869 21.261 15.5167 21.3683C15.4998 21.3923 15.4773 21.4117 15.4511 21.4248C15.4249 21.4379 15.3959 21.4442 15.3667 21.4433H10.0217C9.98976 21.4438 9.95832 21.4357 9.93068 21.4197C9.90304 21.4038 9.88023 21.3807 9.86468 21.3528C9.84913 21.3249 9.84141 21.2934 9.84235 21.2615C9.84328 21.2296 9.85284 21.1986 9.87 21.1717H9.86667ZM33.0567 23.9717C33.0571 24.0073 33.047 24.0422 33.0278 24.0721C33.0085 24.102 32.9809 24.1256 32.9483 24.14C32.5433 24.3117 31.165 24.9483 30.5917 25.7433C29.1283 27.78 28.0117 30.6933 25.5117 30.6933H15.0883C14.2083 30.692 13.3371 30.5173 12.5246 30.1792C11.7121 29.841 10.9742 29.3461 10.3531 28.7226C9.73192 28.0991 9.23973 27.3594 8.90461 26.5456C8.5695 25.7319 8.39803 24.8601 8.4 23.98V23.86C8.4 23.7633 8.48 23.6833 8.58 23.6833H14.3883C14.505 23.6833 14.5883 23.7883 14.58 23.9033C14.5367 24.28 14.6083 24.6683 14.7883 25.02C15.1317 25.72 15.8483 26.1567 16.62 26.1567H19.4967V23.9117H16.65C16.6166 23.9113 16.584 23.9019 16.5556 23.8843C16.5272 23.8668 16.5042 23.8419 16.4889 23.8122C16.4737 23.7825 16.4668 23.7493 16.469 23.716C16.4713 23.6827 16.4826 23.6507 16.5017 23.6233L16.6067 23.4733C16.8733 23.0883 17.2583 22.4967 17.6417 21.82C17.9017 21.3633 18.155 20.8767 18.3583 20.3867C18.3983 20.3 18.43 20.2083 18.4667 20.12C18.5217 19.9633 18.5783 19.8167 18.6183 19.6717C18.6576 19.5487 18.6937 19.4248 18.7267 19.3C18.8217 18.8833 18.8617 18.4433 18.8617 17.9883C18.8617 17.8083 18.855 17.62 18.8383 17.4433C18.83 17.2483 18.805 17.0517 18.7817 16.8567C18.763 16.6822 18.7363 16.5087 18.7017 16.3367C18.6568 16.0747 18.6023 15.8146 18.5383 15.5567L18.515 15.4567C18.465 15.2767 18.4217 15.1067 18.365 14.9283C18.2063 14.3807 18.0239 13.8402 17.8183 13.3083C17.7467 13.1083 17.6678 12.9109 17.5817 12.7167C17.4617 12.42 17.3383 12.1517 17.2267 11.9C17.1711 11.7922 17.1189 11.6827 17.07 11.5717C17.0158 11.4519 16.9586 11.3335 16.8983 11.2167C16.8583 11.1283 16.81 11.0433 16.7783 10.9633L16.4267 10.3167C16.3783 10.2283 16.4583 10.12 16.555 10.1483L18.755 10.7433H18.7717L19.06 10.8267L19.38 10.9167L19.4967 10.9483V9.64333C19.4967 9.01167 20 8.5 20.6283 8.5C20.7767 8.4996 20.9236 8.52922 21.0602 8.58708C21.1969 8.64494 21.3204 8.72983 21.4233 8.83667C21.6361 9.0513 21.7559 9.34109 21.7567 9.64333V11.5833L21.9917 11.6483C22.0083 11.6567 22.0283 11.665 22.0433 11.6767C22.1 11.7167 22.1833 11.78 22.2883 11.86C22.3717 11.9233 22.46 12.0033 22.5633 12.0883C22.8924 12.3565 23.2116 12.6367 23.52 12.9283C23.8767 13.26 24.2767 13.6483 24.66 14.08C24.7683 14.2033 24.8717 14.3233 24.98 14.4567C25.0833 14.5883 25.2 14.7167 25.2967 14.8433C25.4283 15.0167 25.5633 15.1967 25.6883 15.3833C25.7433 15.4717 25.8117 15.5633 25.8633 15.6517C26.0233 15.8883 26.16 16.1317 26.2917 16.3767C26.3483 16.4883 26.4033 16.6117 26.4517 16.7317C26.6 17.06 26.7167 17.3917 26.7883 17.7283C26.812 17.7998 26.8282 17.8735 26.8367 17.9483V17.965C26.86 18.06 26.8683 18.165 26.8767 18.2717C26.9236 18.7643 26.8633 19.2612 26.7 19.7283C26.6483 19.8683 26.6 20.0117 26.5367 20.1517C26.4117 20.435 26.2683 20.7233 26.0967 20.9883C26.04 21.0883 25.9717 21.1917 25.9083 21.2917C25.8367 21.3967 25.76 21.4967 25.6967 21.5917C25.605 21.7179 25.5088 21.8407 25.4083 21.96C25.32 22.08 25.2317 22.2 25.1317 22.3083C24.9967 22.4717 24.865 22.625 24.7233 22.7717C24.6433 22.8683 24.5567 22.9683 24.4633 23.055C24.3767 23.155 24.2833 23.2433 24.2033 23.3233C24.0633 23.4633 23.9533 23.5683 23.8567 23.66L23.6283 23.8633C23.5965 23.8952 23.5534 23.9132 23.5083 23.9133H21.7567V26.1567H23.96C24.4517 26.1567 24.92 25.9833 25.3 25.66C25.4283 25.5483 25.9917 25.06 26.66 24.3233C26.6818 24.2983 26.711 24.2807 26.7433 24.2733L32.8267 22.5117C32.8534 22.5039 32.8815 22.5025 32.9089 22.5075C32.9362 22.5125 32.9621 22.5237 32.9843 22.5403C33.0066 22.557 33.0247 22.5785 33.0373 22.6033C33.0498 22.6281 33.0565 22.6555 33.0567 22.6833V23.9717Z"
+                                        fill="#00B3FF" />
+                                </svg>
+                            </span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- hape news -->
+        <div class="hape-news w-full flex justify-center items-center">
+            <div class="w-[90%] flex justify-between gap-10 items-start pt-11 py-10">
+                <div class="left flex flex-col items-center gap-5 ">
+                    <div class="title w-full flex justify-start">
+                        <p class="uppercase text-white font-extrabold text-[74px]">hape news.</p>
+                    </div>
+                    <div class="img w-full flex justify-end cursor-pointer">
+                        <div
+                            class="isi flex flex-col justify-end bg-cover bg-[url(ape/hape-news1.png)] w-[573pt] px-5 py-3 h-[544pt]">
+                            <p class="text-white font-bold text-[12px]">AUGUST 10, 2023 - THE BLOCKS BEATS</p>
+                            <p class="text-white text-[30px] uppercase font-extrabold">Interview with hape founder </p>
+                        </div>
+                    </div>
+                    <div class="img w-full flex justify-end cursor-pointer">
+                        <div
+                            class="isi flex flex-col justify-end bg-cover bg-[url(ape/hape-news2.png)] w-[573pt] px-5 py-3 h-[412pt]">
+                            <p class="text-white font-bold text-[12px]">DECEMBER 12, 2022 -BLOCKSTER</p>
+                            <p class="text-white text-[30px] uppercase font-extrabold">hape OFFICIAL MARKET</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="right flex flex-col justify-end items-start ">
+                    <div class="img w-full flex flex-col gap-8 justify-end">
+                        <div
+                            class="isi flex flex-col cursor-pointer bg-cover bg-[url(ape/hape-news3.png)] w-[505pt] px-5 py-3 h-[356pt]">
+                            <div class="see flex justify-end items-center">
+                                <div
+                                    class="content flex items-end gap-3 cursor-pointer rounded-[24px] hover:bg-opacity-70 duration-200 bg-white px-5 py-5 backdrop-blur-2xl bg-opacity-50">
+                                    <p class="font-extrabold text-[20px]">
+                                        VIEW ALL
+                                    </p>
+                                    <span>
+                                        <ion-icon name="document-text" class="text-[20px]"></ion-icon>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="txt-area flex flex-col  justify-end h-full">
+                                <p class="text-white font-bold text-[12px] uppercase">december 23, 2022 -JING DAILY</p>
+                                <p class="text-white text-[30px] uppercase font-extrabold">ROAD A HEAD DIESEL</p>
+                            </div>
+                        </div>
+                        <div
+                            class="isi flex flex-col cursor-pointer justify-end bg-cover bg-[url(ape/hape-news4.png)] w-[505pt] px-5 py-3 h-[450pt]">
+                            <p class="text-white font-bold text-[12px] uppercase">may 6, 2022 - amb crypto</p>
+                            <p class="text-white text-[30px] uppercase font-extrabold">caduceus 3d nft BRAND</p>
+                        </div>
+                        <div
+                            class="isi flex flex-col cursor-pointer justify-end bg-cover bg-[url(ape/hape-news5.png)] w-[505pt] px-5 py-3 h-[356pt]">
+                            <p class="text-white font-bold text-[12px] uppercase">February 8, 2022 -yahoo finance</p>
+                            <p class="text-white text-[30px] uppercase font-extrabold">GLASS LABS 3D</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Our Partner -->
+        <div class="partner flex justify-center items-center bg-white">
+            <div class="w-[90%] flex flex-col items-center py-10">
+                <div class="title w-full items-center ">
+                    <p class="font-extrabold text-[74pt]">OUR</p>
+                    <p class="font-extrabold text-[74pt]">PARTNER.</p>
+                </div>
+                <div class="content-partner w-full overflow-x-auto  flex justify-start items-center  gap-5 pt-10 py-5 ">
+                    <a target="_blank" href="https://caduceus.foundation/">
+                        <div class="gambar-partner w-[350px] h-[350px]">
+                            <div
+                                class="isi flex flex-col justify-end bg-cover bg-[url(ape/partner1.png)] grayscale hover:grayscale-0 duration-200 w-full px-5  h-full">
+                                <p class="text-white text-[40px] cursor-default uppercase font-extrabold">caduceus</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a target="_blank" href="https://vertexlabs.uk/">
+                        <div class="gambar-partner w-[350px] h-[350px]">
+                            <div
+                                class="isi flex flex-col justify-end bg-cover bg-[url(ape/partner2.png)] grayscale hover:grayscale-0 duration-200 w-full px-5  h-full">
+                                <p class="text-white text-[40px] cursor-default uppercase font-extrabold">vertex labs
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                    <a target="_blank" href="https://hape.diesel.com/">
+                        <div class="gambar-partner w-[350px] h-[350px]">
+                            <div
+                                class="isi flex flex-col justify-end bg-cover bg-[url(ape/partner3.png)] grayscale hover:grayscale-0 duration-200 w-full px-5  h-full">
+                                <p class="text-white text-[40px] cursor-default uppercase font-extrabold">diesel</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a target="_blank" href="https://www.jagermeister.com/en">
+                        <div class="gambar-partner w-[350px] h-[350px]">
+                            <div
+                                class="isi flex flex-col justify-end bg-cover bg-[url(ape/partner4.png)] grayscale hover:grayscale-0 duration-200 w-full px-5  h-full">
+                                <p class="text-white text-[40px] cursor-default uppercase font-extrabold">jagermeister
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                    <a target="_blank" href="https://onchain.dressx.com/">
+                        <div class="gambar-partner w-[350px] h-[350px]">
+                            <div
+                                class="isi flex flex-col justify-end bg-cover bg-[url(ape/partner5.png)] grayscale hover:grayscale-0 duration-200 w-full px-5  h-full">
+                                <p class="text-white text-[40px] cursor-default uppercase font-extrabold">dressx</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- footer -->
+        <footer class="bg-white w-full pt-14 py-10">
+            <div class="flex justify-center items-center w-full">
+                <div class="w-[90%]  flex flex-col justify-center items-center">
+                    <div class="top w-full flex justify-between py-9">
+                        <div class="left flex flex-col gap-2">
+                            <p class="font-extrabold text-[24px]">APE COLLECTION.</p>
+                            <p class="font-semibold text-[15px] text-[#C2C2C2]">KEEP YOUR STREETWEAR ON</p>
+                        </div>
+                        <div class="right grid grid-cols-3 gap-5 font-medium text-[15px]">
+                            <a  href="">
+                                <p>Instagram <ion-icon class="-rotate-45" name="arrow-forward-outline"></ion-icon>
+                                </p>
+                            </a>
+                            <a href="">
+                                <p>Discord <ion-icon class="-rotate-45" name="arrow-forward-outline">
+                                    </ion-icon>
+                                </p>
+                            </a>
+                            <a href="">
+                                <p>Fashion Index <ion-icon class="-rotate-45" name="arrow-forward-outline"></ion-icon>
+                                </p>
+                            </a>
+                            <a href="">
+                                <p>Twitter <ion-icon class="-rotate-45" name="arrow-forward-outline">
+                                    </ion-icon>
+                                </p>
+                            </a>
+
+                            <a href="">
+                                <p>OpenSea <ion-icon class="-rotate-45" name="arrow-forward-outline">
+                                    </ion-icon>
+                                </p>
+                            </a>
+
+                            <a href="">
+                                <p>Digimental Page <ion-icon class="-rotate-45" name="arrow-forward-outline"></ion-icon>
+                                </p>
+                            </a>
+
+                            <a href="">
+                                <p>Drops <ion-icon class="-rotate-45" name="arrow-forward-outline">
+                                    </ion-icon>
+                                </p>
+                            </a>
+
+                            <a href="">
+                                <p>Rarity Sniper <ion-icon class="-rotate-45" name="arrow-forward-outline"></ion-icon>
+                                </p>
+                            </a>
+
+                            <a href="">
+                                <p>Apparel LookBook <ion-icon class="-rotate-45" name="arrow-forward-outline">
+                                    </ion-icon>
+                                </p>
+                            </a>
+
+                            <a href="">
+                                <p>Vertex Labs <ion-icon class="-rotate-45" name="arrow-forward-outline"></ion-icon>
+                                </p>
+                            </a>
+
+                        </div>
+                    </div>
+                    <div class="bottom w-full flex justify-between border border-x-0 border-t-2 border-b-0 pt-3">
+                        <div class="left font-semibold">
+                            <p>©2024 ALL RIGHT RESERVE</p>
+                        </div>
+                        <div class="right flex gap-5 font-semibold">
+                            <p class="cursor-pointer">TERMS & CONDITIONS</p>
+                            <p class="cursor-pointer">PRIVACY AND POLICY</p>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </footer>
+
+    </section>
+
+
+
+    <script>
+        window.addEventListener('scroll', function () {
+            const scrollPosition = window.scrollY;
+            const textLeft = document.querySelector('.text-top');
+            const textRight = document.querySelector('.text-bottom');
+
+            textLeft.style.transform = `translateX(${scrollPosition}px)`;
+            textRight.style.transform = `translateX(${-scrollPosition}px)`;
+        });
+
+        document.getElementById('switch').addEventListener('click', function () {
+            var image = document.getElementById('nft-big');
+            if (image.classList.contains('grayscale-nft')) {
+                image.classList.remove('grayscale-nft');
+                image.classList.add('colored-nft');
+            } else {
+                image.classList.remove('colored-nft');
+                image.classList.add('grayscale-nft');
+            }
+        });
+
+        function displayContent(contentId, buttonId) {
+            // Hide all content divs
+            var contents = document.querySelectorAll('.item');
+            contents.forEach(function (item) {
+                item.style.display = 'none';
+            });
+
+            // Show the selected content
+            var selectedContent = document.getElementById(contentId);
+            selectedContent.style.display = 'block';
+
+            // remove active button
+            var buttons = document.querySelectorAll('.area-button span');
+            buttons.forEach(function (button) {
+                button.classList.remove('active');
+            });
+
+            // Add 'active' class to the clicked button
+            var selectedButton = document.getElementById(buttonId);
+            selectedButton.classList.add('active');
+        }
+        document.addEventListener('DOMContentLoaded', function () {
+            displayContent('item1', 'button1');
+        });
+    </script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+</body>
+
+</html>
